@@ -53,6 +53,9 @@ http://code4app.com/article/cocoapods-install-usage这篇文章。
       s.source_files = 'pod-library/*.{h,m}'
       s.resources = 'pod-library/images.xcassets/**/*.png'
       s.dependency 'AFNetworking', '~> 2.0'
+      s.vendored_frameworks='**/*.framework'
+      s.preserve_paths = 'LibraryName.a'
+      s.frameworks = 'QuartzCore'
     end
 
 这句话的意思就是创建一个Spec的配置
@@ -91,6 +94,9 @@ http://code4app.com/article/cocoapods-install-usage这篇文章。
 在这里我使用的是`resources`
 
 一般我们有可能打包的资源 声音，图片，xib...
+- vendored_frameworks本地的frameworks
+- frameworks系统frameworks
+- preserve_paths 本地的.a库
 
 2. 在项目中调用pod-library
 --------------------
