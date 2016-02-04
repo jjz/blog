@@ -1,5 +1,5 @@
 # Meteor:路由（1）
-Meteor本身并没有好用的路由使用，还有比较好用的第三方Package使用，`Iron.Router`就是一个比较好的Meteor的路由框架，提供了Client 和 Server的路由设置，还可以用来做`restful`风格的api使用。
+Meteor本身并没有好的路由使用规则，还好有比较好用的第三方Package使用。`Iron.Router`就是一个比较好的Meteor的路由框架，提供了Client 和 Server的路由设置，还可以用来开发`restful`风格的api。
 ##安装Iron.Router
 直接cd到项目目录使用安装命令:
 >meteor add iron:router
@@ -34,11 +34,11 @@ Router.route('/', function () {
 });
         
 ```
-我们需要设置路由规则，首先要先`meteor`默认生成的文件。
+我们默认生成的文件运行之后和Iron.Router规则有冲突，这个提醒的意思是我们还没有设置一个"/"的路由规则，我们需要设置路由规则，但是首先要先将meteor默认生成的文件删除。
 
-##使用路由规则
-1.head.html
-Iron.router只需要设置一个`head.html`
+##使用Iron.Router
+###添加head.html
+Iron.router需要设置一个`head.html`
 ```
 <head>
     <meta charset="UTF-8">
@@ -46,27 +46,28 @@ Iron.router只需要设置一个`head.html`
 </head>
 
 ```
-查看网页源代码可以看到*head*里面多了个**title**。
+查看网页源代码可以看到*head*里面多了个**title**:
+![图片描述][1]
 
-2.设置"/"页面
+###设置"/"页面
 新建一个home.html页面
 ```
 <template name="home">
     <h1>I am home</h1>
 </template>
 ```
-3.router.js
-先建一个router.js文件。添加一个路由规则:
+###router.js
+新建一个router.js文件。添加一个路由规则:
 ```
 Router.route('/', function () {
     this.render('home');
 });
 ```
-这段代码的意思是在主目录下，我们指定访问名字为`home`的template。
+这段代码的意思是在主目录（'/'）下，我们指定访问名字为`home`的template。
 现在页面就可以正常的现在home.html的内容了。
 
 ##简化写法
-我们在新建一个content.html。
+新建一个content.html。
 ```
 <template name="content">
     <h2>I am content</h2>
@@ -76,10 +77,10 @@ Router.route('/', function () {
 ```
 Router.route('/content');
 ```
-这个规则的会自动的指定名字叫做**content**的template或者页面，这样简单的写法，让你不用实现function。
+这个规则的会自动的指定名字叫做**content**的template或者页面，这样简单的写法，让你不用再实现后面function的内容，简化了代码，`约定大于配置`。
 
 ##REST
-大多数据的网站都支持REST风格的API,Iron.Router不仅仅能够对Meteor的内容做路由，还能使用REST风格的Api。
+大多数据的网站都需要支持REST风格的API,Iron.Router不仅仅能够对Meteor的内容做路由，还能增加REST风格的Api。
 添加一条router规则:
 ```
 Router.route('/content/:_id', function () {
@@ -95,10 +96,11 @@ Router.route('/content/:_id', function () {
 ```
 this is string
 ```
-并没有html和js文件。
+并没有返回html和js文件。
 
-项目地址：
+项目地址：https://github.com/jjz/meteor/tree/master/meteor-router
 
 
+  [1]: /img/bVsGHn
 
 
