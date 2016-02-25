@@ -118,4 +118,6 @@ rnToastAndroid.show('Hello Toast of native', rnToastAndroid.SHORT);
 ```
 这样就完成了从JavaScript中直接调用了Java中定义的方法。
 
+代码地址：https://github.com/jjz/react-native/tree/master/RNJava
+
 
