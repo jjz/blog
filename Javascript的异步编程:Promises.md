@@ -37,7 +37,37 @@ begin do something
  run failed
  reject from promise
 ```
-##使用Promise实现Ajax操作
+##使用Promise进行网络请求
+```
+getRequest = function (url) {
+    var promise = new Promise(function (resolve, reject) {
+        var request = require('request');
+        request(url, function (error, respones, body) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            if (respones.statusCode == 200) {
+                resolve(body)
+
+            } else {
+                reject(respones.status);
+
+            }
+        });
+    });
+    return promise;
+
+};
+
+getRequest("https://github.com/").then(function (result) {
+    console.log(result);
+}, function (error) {
+    console.error('error', error);
+});
+
+```
+使用Promise进行网络请求，也可以使用Promise在浏览上实现Ajax请求。
 
 
 
