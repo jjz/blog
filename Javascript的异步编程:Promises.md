@@ -70,5 +70,5 @@ getRequest("https://github.com/").then(function (result) {
 使用Promise进行网络请求，也可以使用Promise在浏览上实现Ajax请求。
 
 
-
+代码地址：https://github.com/jjz/node
 
