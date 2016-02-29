@@ -1,8 +1,9 @@
 react-native调用Native:回调（Android）
-在react-native中我们可以通过在java层自定义ReactMethod(https://segmentfault.com/a/1190000004486024)的方式，在JavaScript层直接调用Android中的Native方法，在大部分的方法调用中，我们需要知道调用方法之后处理的结果是什么，有没有出现异常情况等，JavaScript本身是事件驱动的语言，需要在JavaScript中会使用大量的回调方法来处理函数处理的结果。react-native中定义了`Callback`的接口，用来处理JavaScript调用Java方法的回调。
+在react-native中可以通过在java层自定义`ReactMethod`(https://segmentfault.com/a/1190000004486024)方式给JavaScript调用，这样在JavaScript层就可以直接调用Android中的Native方法.
+但在大部分的方法调用中，都需要知道调用方法之后的处理结果是什么，有没有出现异常等情况。JavaScript本身是事件驱动的语言，需在JavaScript中可以使用回调方法来处理函数返回的结果。同样地在react-native中定义了`Callback`和`Promise`的接口，用来处理JavaScript调用Java方法的回调。
 ##Callback
-`Callback`是react.bridge中的一个接口，作为`ReactMethod`的一个传参，用来映射JavaScript的回调函数（function）。`Callback`接口只定义了一个方法`invoke`，invoke接受多个参数，这个参数必须是bridge中支持的参数。
-我们定义一个类用来给JavaScript调用:
+`Callback`是react.bridge中的一个接口，它作为`ReactMethod`的一个传参，用来映射JavaScript的回调函数（function）。`Callback`接口只定义了一个方法`invoke`，invoke接受多个参数，这个参数必须是react.bridge中支持的参数。
+首先我们定义一个类用来给JavaScript调用:
 ```
 public class StoreModule extends ReactContextBaseJavaModule {
 
@@ -39,7 +40,7 @@ public class StoreModule extends ReactContextBaseJavaModule {
     }
 
 ```
-现在我们有了一个带有`Callback`的参数的*StoreModule*类，把这个类的实例加入`ReactPackage`的`createNativeModules`中。
+现在我们有了一个带有`Callback`作为参数的*StoreModule*类，把这个类的实例加入`ReactPackage`的`createNativeModules`中，就可以在JavaScript层调用该方法。
 在JavaScript中，调用这个带有`Callback`参数的方法:
 ```
 var {NativeModules}=require('react-native');
@@ -50,10 +51,10 @@ storeModule.addUser("jjz","123456",(msg)=>{
     alert(errorMsg)
 });
 ```
-这里的方法回调方法我们都是使用的匿名函数，在JavaScript调用Java之后，处理结果会以`Callback`的形式回到JavaScript中。
+这里的方法回调方法我们都是使用的匿名函数，在JavaScript调用Java之后，处理结果会以`Callback`的形式回到JavaScript中,在JavaScript中再对相应的结果进行处理。
 
 ##Promise
-Promise是`ES6`中增加的对于异步编程更有友好的API(https://segmentfault.com/a/1190000004505028),使用Promise可以简洁的处理回调。
+Promise是`ES6`中增加的对于异步编程和回调更加友好的API(https://segmentfault.com/a/1190000004505028),使用Promise可以更简洁，更灵活地处理回调。
 在`react.briage`中定义的`Promise`接口,实现了`resolve`和`reject`的方法,`resolve`用来处理正确处理结果的情况，`reject`用来处理异常的情况。
 在`StoreModule`定义一个支持`Promise`作为参数的方法:
 ```
@@ -90,5 +91,6 @@ storeModule.login('jjz','123456').then((map)=>{
 ```
 使用Promise比使用`Callback`更加的简洁，还能更加灵活的在多线程之间进行切换。
 
-代码地址:
+代码地址:https://github.com/jjz/react-native/tree/master/RNJava
+
 
