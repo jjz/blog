@@ -29,13 +29,17 @@ Type help for instructions on how to use fish
 
 等待镜像下载完成，就可以运行jenkins的镜像了.
 
-把`/var/jenkins_home`映射到 'jenkins/'目录下。
+>docker run -d -p 8080:8080  -v $PWD/jenkins:/var/jenkins_home -t  jenkins
 
->docker run -d  -v $PWD/jenkins:/var/jenkins_home -t jenkins
+把`/var/jenkins_home`映射到 'jenkins/'目录下。
+把jenkins的8080端口暴露给容器的8080端口,可以在容器外访问。
+
 
 运行效果:
+![图片描述][1]
 
 
+  [1]: /img/bVthCU
 
 
 
