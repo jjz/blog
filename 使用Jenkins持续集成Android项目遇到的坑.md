@@ -15,10 +15,24 @@ A problem occurred evaluating root project 'workspace'.
 > Could not find property 'VERSION' on root project 'workspace'.
 
 ```
-使用Android Studio打开一个项目的时候默认会生成`gradle.properties`,但是在使用Jenkins集成的时候使用的是`gradle build`不会自动生成`gradle.properties`,就会出现上面的错误，需要把`gradle.properties`。
+使用Android Studio打开一个项目的时候默认会生成`gradle.properties`,但是在使用Jenkins集成的时候使用的是`gradle build`命令的时候默认不会自动生成`gradle.properties`,就会出现上面的错误，需要把添加一个`gradle.properties`：
+```
+VERSION=1.0.1
+VERSION_CODE=1
+
+signing.keyId=
+signing.secretKeyRingFile=
+signing.password=
+
+sonatypeUsername=jdamcd
+sonatypePassword=
+```
 
 ##无法使用.ssh中的private key
-因为Jenkins新建了一个用户，改用户无法读取我当前使用用户的ssh private key,因此我在`Add credentials`中输入了private key:
+安装Jenkins的时候会新建了一个用户，改用户无法读取我当前使用用户的ssh private key,因此我在`Add credentials`中手动输入private key:
+
+![图片描述][1]
+
 
 ##构建项目权限不足
 ```
@@ -52,4 +66,6 @@ Jenkins提供各种强大的插件`Gradle plugin`的，可以配置本地的grad
 `Android Emulator Plugin`,帮助管理Android sdk的，也可以帮助集成Android项目。
 Jenkins的有各种强大的插件，如果某个配置，某个工具不知道怎么使用了，可以尝试找下对应的插件。
 
+
+  [1]: /img/bVtz5V
 
