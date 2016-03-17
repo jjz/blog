@@ -62,7 +62,7 @@ java.io.IOException: Cannot run program "gradle" (in directory "/Users/Shared/Je
 成功了构建出了Apk文件。
 
 用于自动构建的项目地址：https://github.com/jjz/android-crop
-*下一篇会聊聊遇到的坑*
+*下一篇会聊聊遇到的坑*[使用Jenkins持续集成Android项目遇到的坑][13]
 
 
   [1]: /img/bVtz3b
@@ -77,6 +77,7 @@ java.io.IOException: Cannot run program "gradle" (in directory "/Users/Shared/Je
   [10]: /img/bVtz55
   [11]: /img/bVtz6K
   [12]: /img/bVtz6W
+  [13]: https://segmentfault.com/a/1190000004628488
 
 
 
