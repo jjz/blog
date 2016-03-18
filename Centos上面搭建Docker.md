@@ -1,7 +1,7 @@
-#Centos上面搭建Docker
-在Centos上面搭建一个Docker,不要为我为什么不用Ubuntu（因为某种我不想说的原因^_^）。
+#CentOS上面搭建Docker
+在CentOS上面搭建一个Docker,不要为我为什么不用Ubuntu（因为某种我不想说的原因^_^）。
 ##环境要求
-Docker要求系统必须在CentOS6以上，内核版本必须是2.6.32-431以上
+Docker要求系统必须在CentOS 6以上，内核版本必须是2.6.32-431以上
 查看CentOS版本:
 >cat /etc/issue
 ```
@@ -17,7 +17,8 @@ Kernel \r on an \m
 运行命令:
 >yum update
 >sudo yum install docker-io
-安装Docker。
+
+第一条命令是更新下现有库。
 
 ##启动Docker
 >sudo service docker start
@@ -26,7 +27,7 @@ Kernel \r on an \m
 tarting cgconfig service:                                 [  OK  ]
 Starting docker:	                                   [  OK  ]
 ```
-测试下Docker安装是否完成:
+测试下Docker安装是否成功,使用著名的`hello world`:
 >docker run hello-world
 
 ```
