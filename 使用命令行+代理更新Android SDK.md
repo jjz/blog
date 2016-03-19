@@ -1,4 +1,4 @@
-#命令行使用代理更新Android SDK
+#使用命令行+代理更新Android SDK
 在无桌面的Linux上面安装[Jenkins](https://segmentfault.com/a/1190000004639325)，要配置成Andorid 的持续集成环境[Jenkins持续集成Android项目](https://segmentfault.com/a/1190000004628020),需要在无桌面的Linux(ubuntu,centos)上安装Android SDK,
 相对来说获取android-sdk-linux的安装包比较容易。
 >wget http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz  
@@ -80,41 +80,55 @@ http://ubuntu.buct.edu.cn/ 端口：80
 http://ubuntu.buct.cn/ 端口：80
 http://sdk.gdgshanghai.com 端口：8000
 IPv6: http://ubuntu.buct6.edu.cn/ 端口：80
+腾讯镜像:
+http://android-mirror.bugly.qq.com 端口：8080
+
 ```
 使用代理查看SDK列表：
->android list sdk  --proxy-host ubuntu.buct.edu.cn  --proxy-port 80
+>android list sdk --extended --proxy-host android-mirror.bugly.qq.com  --proxy-port 8080 -s
 ```
- 1- Documentation for Android SDK, API 23, revision 1
-   2- SDK Platform Android N Preview, revision 1
-   3- SDK Platform Android 5.0.1, API 21, revision 2
-   4- SDK Platform Android 4.4.2, API 19, revision 4
-   5- SDK Platform Android 4.3.1, API 18, revision 3
-   6- SDK Platform Android 4.2.2, API 17, revision 3
-   7- SDK Platform Android 4.1.2, API 16, revision 5
-   8- SDK Platform Android 4.0.3, API 15, revision 5
-   9- SDK Platform Android 2.3.3, API 10, revision 2
-  10- SDK Platform Android 2.2, API 8, revision 3
-  11- Samples for SDK API 23, revision 2
-  12- Samples for SDK API 22, revision 6
+ id: 1 or "doc-23"
+     Type: Doc
+     Desc: Documentation for Android SDK, API 23, revision 1
+----------
+id: 2 or "android-21"
+     Type: Platform
+     Desc: Android SDK Platform 5.0.1
+           Revision 2
+.....
+id: 20 or "sample-8"
+     Type: Sample
+     Desc: Android SDK Samples for Android API 8, revision 1
+----------
+.....
+----------
+id: 31 or "extra-android-gapid"
+     Type: Extra
+     Desc: GPU Debugging tools, revision 1.0.3
+           By Android
+           Tools that support GPU debugging and profiling within an IDE.
+           Install path: extras/android/gapid
+----------
+id: 32 or "extra-android-m2repository"
+     Type: Extra
+     Desc: Local Maven repository for Support Libraries, revision 28
+           By Android
+           Install path: extras/android/m2repository
+----------
+
   ......
 ```
 
 使用代理更新指定SDK:
->android update sdk --no-ui --filter 2 --proxy-host mirrors.neusoft.edu.cn --proxy-port 80 -s
-更新` 2- SDK Platform Android N Preview, revision 1`，Android N Preview的SDK。
+>android update sdk --no-ui --filter 2 --proxy-host android-mirror.bugly.qq.com  --proxy-port 8080 -s
+
+安装` id: 2 or "android-21"`Android 21 的SDK。
 安装的时候提示接受license:
 ```
 Do you accept the license 'android-sdk-preview-license-52d11cd2' [y/n]:
 ```
 选择y同意之后继续安装。
-```
-nstalling Archives:
-  Preparing to install archives
-  Downloading SDK Platform Android N Preview, revision 1
-  Installing SDK Platform Android N Preview, revision 1
-    Installed SDK Platform Android N Preview, revision 196%)
-  Done. 1 package installed.
-```
-使用代理安装SDK成功，使用国内的镜像服务器安装，服务稳定，下载速度快，不需要翻墙。
-
+等待安装成功。
+使用国内的镜像服务器安装，服务稳定，下载速度快，不需要翻墙。
+注：其中id为32是extra-android-m2repository，android的`Support Libraries`。
 
