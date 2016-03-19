@@ -132,3 +132,27 @@ Do you accept the license 'android-sdk-preview-license-52d11cd2' [y/n]:
 使用国内的镜像服务器安装，服务稳定，下载速度快，不需要翻墙。
 注：其中id为32是extra-android-m2repository，android的`Support Libraries`。
 
+##错误
+```
+ Cannot run program "/var/lib/jenkins/tools/android-sdk/build-tools/23.0.1/aapt": error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at com.android.builder.png.AaptProcess$Builder.start(AaptProcess.java:163)
+	at com.android.builder.png.QueuedCruncher$1.creation(QueuedCruncher.java:106)
+	at com.android.builder.tasks.WorkQueue.run(WorkQueue.java:203)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:248)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:134)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 4 more
+Thread(png-cruncher_2) has a null payload
+```
+因为aapt是32的位，不能在64位的系统上面运行，需要安装32位的支持。
+CentOS:
+> sudo yum install libz.so.1
+
+Ubuntu:
+>sudo yum apt-get install lib32z1
+
+
