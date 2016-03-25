@@ -23,4 +23,7 @@
 
 >sudo /etc/init.d/jenkins stop
 
+配置文件地址为:`/etc/default/jenkins`
+
+
 
