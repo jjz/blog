@@ -1,9 +1,9 @@
 #Apk包的破解与反编译
 首先需要下载三个反编译的工具:
-提取资源:`apktool`,http://ibotpeaches.github.io/Apktool/install/
-反编译:`dex2jar`,https://github.com/pxb1988/dex2jar
-查看源码工具:`jd-gui`,http://jd.benow.ca/
-以开源中国的android版本为例，看下怎么进行破解和反编译apk。
+    1.提取资源:apktool, http://ibotpeaches.github.io/Apktool/install/
+    2.反编译:dex2jar, https://github.com/pxb1988/dex2jar
+    3.查看源码工具:jd-gui, http://jd.benow.ca/
+这里以开源中国的android版本为例，看下怎么进行破解和反编译apk的。
 
 ##apktool
 apk-tool是apk反编译的神器，用来提取apk内的资源。
@@ -24,8 +24,9 @@ I: Copying unknown files...
 I: Copying original files...
 ```
 提取资源成功：
+![图片描述][1]
 
-这里有一个`smali`目录，它对应的是原始Android项目的src目录，就是Java的源代码。smali是Dalvik虚拟机指令语言，可以在https://github.com/JesusFreke/smali 这里查看smali的详细内容。
+这里有一个`smali`目录，它对应的是原始Android项目的src目录，就是Java的源代码。smali是Dalvik虚拟机指令语言，可以在https://github.com/JesusFreke/smali 这里查看smali的更多内容。
 
 ##dex2jar
 `dex2jar`是一个能操作Android的delvik(.dex)文件格式和Java的（.class）的工具集合。主要功能有：
@@ -34,7 +35,7 @@ I: Copying original files...
 	3.smali/baksmali:smali工具
 	4.其他
 	
-这里使用`dex2jar`主要是将apk反编译成java源码，方便阅读。
+这里使用`dex2jar`主要是将apk的.dex反编译成java源码，方便阅读。
 首先将apk文件改名为.zip文件。
 解压zip包，可以看到一个`classes.dex`文件，这个就是java文件编译再通过dx工具打包而成的。
 在`dex2jar`目录下:
@@ -45,9 +46,17 @@ I: Copying original files...
 ##jd-gui
 `jd-gui`是java的反编译器`Java Decompiler project`,把二进制的可执行文件翻译成代码。
 `jd-gui`提供了一个图形化的界面:
+![图片描述][2]
 
 可以通过`jd-gui`直接打开上面得到的文件`classes-dex2jar.jar`浏览代码:
+![图片描述][3]
+
+
 
 	
 
+
+  [1]: /img/bVtTNC
+  [2]: /img/bVtTN3
+  [3]: /img/bVtTN6
 
