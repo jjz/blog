@@ -1,10 +1,10 @@
 #使用JSPatch平台热修复iosApp
 
-ios产品开发中常常会遇到这种情况，线上发现一个严重bug,可能是一个crash,可能是一个功能无法使用，这时能做的只是赶紧修复Bug然后提交等待漫长的审核，即使申请加急也不会快到那里去，即使审核完了之后，还要盼望着用户快点升级，付出了很大的成本才能完成Bug的修复。
+IOS产品开发中常常会遇到这种情况，线上发现一个严重bug,可能是一个crash,可能是一个功能无法使用，这时能做的只是赶紧修复Bug然后提交等待漫长的审核，即使申请加急也不会快到那里去，即使审核完了之后，还要盼望着用户快点升级，用户不升级还是在存在同样的漏洞，这样的情况让开发者付出了很大的成本才能完成Bug的修复。
 
-JSPath就是为了解决这样的问题的，只需要在项目中引入极小的JSPatch引擎，就可以还用JavaScript语言调用Objective-C的原生API，动态更新APP，修复BUG。
+JSPath就是为了解决这样的问题而出现的，只需要在项目中引入极小的JSPatch引擎，就可以还用JavaScript语言调用Objective-C的原生API，动态更新APP，修复BUG。
 
-JSPaht本身是开源项目,项目地址:http://jspatch.com/。
+JSPaht本身是开源项目,项目地址:http://jspatch.com/,github地址: https://github.com/bang590/JSPatch
 在他的官网上面给出了一个例子:
 ```
 @implementation JPTableViewController
@@ -18,7 +18,7 @@ JSPaht本身是开源项目,项目地址:http://jspatch.com/。
 ...
 @end
 ```
-可以通过下发下面的js代码修复这个bug:
+可以通过下发下面的JavaScript代码修复这个bug:
 ```
 //JS
 defineClass("JPTableViewController", {
@@ -50,27 +50,18 @@ SDK地址:http://jspatch.com/Index/sdk
 #import "AppDelegate.h"
 #import <JSPatch/JSPatch.h>
 
-
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
-
-
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [JSPatch startWithAppKey:@"f78378d77e5783e8"];
     [JSPatch sync];
-    // Override point for customization after application launch.
     return YES;
 }
 @end
 ```
 
 ##在平台中上传js修复文件
-为了简单我们只上传一个简单的`UIAlertView`：
+为了简单我们只上传一个简单的`UIAlertView`,弹出一个提示框：
 ```
 ar alertView = require('UIAlertView').alloc().init();
 alertView.setTitle('Alert');
@@ -87,5 +78,12 @@ alertView.show();
 很明显这里的url并没有使用https，我们可以通过设置先规避掉这个问题:
 	1.在info.plist中添加NSAppTransportSecurity类型为Dictionary.
 	2.在NSAppTransportSecurity中添加NSAllowsArbitraryLoads类型为Boolean，值为YES
+![图片描述][1]
 
+运行效果：
+![图片描述][2]
+
+
+  [1]: /img/bVuOP8
+  [2]: /img/bVuOQ0
 
