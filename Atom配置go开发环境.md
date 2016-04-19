@@ -1,5 +1,5 @@
 #Atom配置go开发环境
-一直没有找到一个比较好用的golang的IDE，虽然IntelliJ换不错，但是收费版的实在是太贵了，免费版的又是各种功能缺失，今天尝试了一下在Atom上面配置Golang的开发环境，发现效果很不错，记录下配置环境的步骤。
+一直没有找到一个比较好用的golang的IDE，虽然IntelliJ还不错，但是收费版的实在是太贵了，免费版的又是各种功能缺失，今天尝试了一下在Atom上面配置Golang的开发环境，发现效果很不错，记录下配置环境的步骤。
 首先要先安装下Atom,Atom是github打造的文本编辑器:https://atom.io/,开源，美观，有各种强大的插件，可以直接下载安装。
 安装Go，Mac上面的安装：https://segmentfault.com/a/1190000003933557
 
@@ -38,6 +38,8 @@ keymap.cson就是自己的atom的快捷键配置文件
 Atom没有编译工具,可以在命令中直接运行go程序，需要安装`atom-terminal-panel`，在install中直接输入`atom-terminal-panel`安装。
 
 直接使用快捷键**control+\`**就可以呼出terminal，个人感觉-习惯了`fish shell`还是用不惯atom里面的termianl。
+
+评论里面有人建议使用`Terminal Plus`,今天试用了下，非常满意，对于fish的支持很好，快捷键是`cmd+shift+t`
 
 
   [1]: /img/bVuQLe
