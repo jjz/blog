@@ -1,5 +1,5 @@
 #OCLint规则与结果分析
-`OCLint`是用来做c,c++和Objective-c的静态代码分析工具。在[OCLint安装和使用]（https://segmentfault.com/a/1190000005150573）中介绍了`OCLint`的安装和是使用。运行`OCLint`之后，要根据规则读懂结果,分析和修改代码。
+`OCLint`是用来做c,c++和Objective-c的静态代码分析工具。在[OCLint安装和使用](https://segmentfault.com/a/1190000005150573)中介绍了`OCLint`的安装和是使用。运行`OCLint`之后，要根据规则读懂结果,分析和修改代码。
 有的时候代码出现的一些警告，并不需要立刻修改，但是有一个警告在哪里看着还是挺别扭的，这个时候会就需要了解如何禁止或者忽略一些规则，来消除警告。
 ##OCLint规则
 最新的OCLint中有67个检查的规则http://docs.oclint.org/en/stable/rules/index.html，
