@@ -30,9 +30,9 @@ beepkg
 	3.项目的一些配置文件
 因此我们在使用`bee pack`打包的时候需要忽略这些文件，`bee pack`在编译之后压缩的的时候会默认忽略这三种文件:.go:.DS_Store:.tmp。因此我们只需要忽略其他的文件即可。
 使用命令`-exr`用正则表达式忽略文件：
->bee pack -be GOOS=linux -ba -exr='^[0-9a-f]|[*.iml]$'
+>bee pack -be GOOS=linux -ba -exr='^[0-9a-f]$'
 
-因为使用了文件存储的session，本地目录下会生成session的文件夹需要忽略打包`[0-9a-f]`,`[*.iml]`是IntelliJ生成的项目配置文件,在打包的时候需要忽略这些文件。
+因为使用了文件存储的session，本地目录下会生成session的文件夹需要忽略打包`[0-9a-f]`,在打包的时候需要忽略这些文件。
 
 
 ##打包脚本
@@ -128,7 +128,7 @@ echo 'update code'
 git reset HEAD --hard
 git pull origin master
 echo 'pack'
-bee pack -be GOOS=linux -exr='^[0-9a-f]|[*.iml]$'
+bee pack -be GOOS=linux -exr='^[a-f0-9]$'
 echo 'upload'
 scp beepkg.tar.gz  jjz@192.168.1.10:/root/goapp/beepkg
 echo 'restart'
