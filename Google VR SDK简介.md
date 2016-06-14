@@ -43,5 +43,5 @@ Unity 3D VR的特点:
 * 当前的Unity 3D项目转向VR
 * 让应用容易的切换VR模式
 
-Ggoole VR在stackoverflow的专门问答区：http://stackoverflow.com/questions/tagged/
+Ggoole VR在stackoverflow的专门问答区：http://stackoverflow.com/questions/tagged/google-vr
 
