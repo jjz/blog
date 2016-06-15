@@ -1,5 +1,5 @@
 #Andorid Studio NDK开发-Hello World
-介绍了在Android Studio中配置NDK的开发环境，配置为NDK开发环境之后，就可以写下著名的`Hello World`程序了。
+介绍了在Android Studio中配置NDK的开发环境:[http://www.jianshu.com/p/d695020dc08c](http://www.jianshu.com/p/d695020dc08c)，配置完NDK开发环境之后，就可以写一下著名的`Hello World`程序了。
 
 ##创建JNI目录
 右键点击App(对应的module)新建jni目录:
