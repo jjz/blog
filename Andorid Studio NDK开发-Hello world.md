@@ -1,48 +1,54 @@
 #Andorid Studio NDK开发-Hello World
-配置为NDK开发环境之后[http://www.jianshu.com/p/d695020dc08c](http://www.jianshu.com/p/d695020dc08c)，就可以写著名的`Hello World`程序了。
+介绍了在Android Studio中配置NDK的开发环境，配置为NDK开发环境之后，就可以写下著名的`Hello World`程序了。
 
 ##创建JNI目录
 右键点击App(对应的module)新建jni目录:
-App->New->Folder->JNI Folder 
-在main的目录下会多出一个`jni`目录:
 
-##新建HelloJni
+![0F25E027-5595-460B-848C-845C46385FEF.png](http://upload-images.jianshu.io/upload_images/22188-88c1458f306123b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+    App->New->Folder->JNI Folder 
+在main目录下就会出现一个`jni`目录:
+
+##新建Java类
 新建一个HelloJni.java的类，用来调用NDK编写的方法:
 ```
+package com.example.jjz.jni;
 
 public class HelloJni {
-    static {
-    //加载.so的类库
-        System.loadLibrary("hello");
-    }
-	//定义一个jni的方法
-    public native String sayHello();
+    static {
+    //加载.so的类库
+        System.loadLibrary("hello");
+    }
+  //定义一个jni的方法
+    public native String sayHello();
 
 }
 
 ```
 
+可以看到一个提示，没有实现`sayHello`的方法。
 
-会得到一个提示，没有实现`sayHello`的方法。
+![5D84BC50-6F5C-4FA9-8263-DAE3F6B9AC3B.png](http://upload-images.jianshu.io/upload_images/22188-e016064f13963aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##gradle中配置NDK
+
+##gradle中配置支持NDK
 在bulid.gradle中设置ndk的的moduleName
 ```
-  defaultConfig {
-        applicationId "com.example.jjz.jni"
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-        
-         sourceSets.main{
-            jniLibs.srcDir 'src/main/libs'
-        }
+  defaultConfig {
+        applicationId "com.example.jjz.jni"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        //指定.so的目录
+         sourceSets.main{
+            jniLibs.srcDir 'src/main/libs'
+        }
 
-        ndk{
-            moduleName 'hello'
-        }
-    }
+        ndk{
+            moduleName 'hello'
+        }
+    }
 ```
 
 同步gradle发现错误
@@ -50,15 +56,15 @@ public class HelloJni {
 NDK integration is deprecated in the current plugin
 set "android.useDeprecatedNdk=true"in gradle.properties to continue using the current NDK integration
 ```
-在gradle.properties中设置`android.useDeprecatedNdk=true`
+需要在gradle.properties中设置`android.useDeprecatedNdk=true`
 
-#添加.h文件
-需首先要先生成.h头文件，jni的头文件会很麻烦，可以通过`javah`命令自动生成。
+#生成.h文件
+需要在Java中使用调用NDK的方法，首先要先生成.h头文件，jni的.h文件很麻烦，我们可以通过`javah`命令自动生成。
 在app/目录下运行命令:
 >javah -d src/main/jni/ -classpath build/intermediates/classes/debug/ com.example.jjz.jni.HelloJni
 其中`-d`是生成.h文件的保存目录
-`-classpath`是指定.class所在的目录，项目build成功之后，会在`build/intermediates/classes/debug/`生成.class文件。
-`com.example.jjz.jni.HelloJni`是包名加上类名的全路径。
+`-classpath`是指定.class所在的目录，项目build成功之后，会在`build/intermediates/classes/debug/`目录里生成.class文件。
+`com.example.jjz.jni.HelloJni`是包名加上类名。
 就可以在jni目录下得到一个`com_example_jjz_jni_HelloJni.h`的文件。
 
 ```
@@ -73,12 +79,12 @@ set "android.useDeprecatedNdk=true"in gradle.properties to continue using the cu
 extern "C" {
 #endif
 /*
- * Class:     com_example_jjz_jni_HelloJni
- * Method:    sayHello
- * Signature: ()Ljava/lang/String;
- */
+ * Class:     com_example_jjz_jni_HelloJni
+ * Method:    sayHello
+ * Signature: ()Ljava/lang/String;
+ */
 JNIEXPORT jstring JNICALL Java_com_example_jjz_jni_HelloJni_sayHello
-  (JNIEnv *, jobject);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
@@ -87,45 +93,40 @@ JNIEXPORT jstring JNICALL Java_com_example_jjz_jni_HelloJni_sayHello
 
 ```
 
-##添加实现文件
+##实现.h文件
+.h文件只是一个声明文件，我们需要实现.h文件中定义的方法
 * 添加.c文件
 新建文件`com_example_jjz_jni_HelloJni.c`文件实现`sayHello`方法。
 ```
 #include "com_example_jjz_jni_HelloJni.h"
-
-
-JNIEXPORT void JNICALL Java_com_example_jjz_jni_HelloJni_sayHello(JNIEnv * evn, jobject object){
-    printf("hello world");
-}```
+JNIEXPORT void JNICALL JNIEXPORT jstring JNICALL Java_com_example_jjz_jni_HelloJni_sayHello(JNIEnv *env, jobject object) {
+    return (*env)->NewStringUTF(env, "Hello Jni");
+}
+```
 
 * 添加Application.mk
-
-```
+ ```
 APP_MODULES := hello
 APP_ABI :=all
-
 ```
 
 * 添加Android.mk
 
-```
+ ```
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-
 LOCAL_MODULE :=hello
-
 LOCAL_SRC_FILES =: com_example_jjz_jni_HelloJni.c
 include $(BUILD_SHARED_LIBRARY)
-
 ```
 
 ##ndk-build
 在../app/src/main/jni目录下，运行命令
 >ndk-build
 
-运行成功之后可以看到libhello.so文件已经生成:
+运行之后可以看到生成的libhello.so文件:
 
-
+![2AE61081-2A1B-4E7F-B5FD-F20528C42009.png](http://upload-images.jianshu.io/upload_images/22188-7350d13499df0fee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 项目地址：https://github.com/jjz/android/tree/master/Jni
 
