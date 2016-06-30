@@ -27,7 +27,7 @@ Android的单元测试有两种方式:`本地单元测试`和`设备单元测试
 
 </manifest>
 ```
-`android.test.InstrumentationTestRunner`是Android单元测试其中的一个启动项,设置`android:targetPackage`和项目的package相同，代表当前单元测试的运行和当前应用在一个进程中。
+`android.test.InstrumentationTestRunner`是Android单元测试其中的一个启动项,`com.android.test.runner.MultiDexTestRunner`用来启动MultiDex的项目。设置`android:targetPackage`和项目的package相同，代表当前单元测试的运行和当前应用在一个进程中。
 ##编写测试代码
 增加一个方法用来比较两个字符串的是否相等:
 ```
