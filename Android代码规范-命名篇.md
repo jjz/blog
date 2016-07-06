@@ -130,5 +130,5 @@ Drawable是有多个状态的，在命名中体现出状态的不同：
 
 其他资源文件的命名需要遵守Android的规范即可，比如`arrays.xml`数组文件，`dimens.xml`分辨的配置，`style.xml`样式的配置，资源文件的ID命名规则都是才是字母小写，使用下划线分割的原则。
 
-
+参考:[https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md](https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md) ,[http://source.android.com/source/code-style.html](http://source.android.com/source/code-style.html) ,[https://google.github.io/styleguide/javaguide.html](https://google.github.io/styleguide/javaguide.html)
 
