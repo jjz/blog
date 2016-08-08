@@ -1,4 +1,4 @@
-#react-natie调用ios native
+#react-native调用ios native方法
 React Native在手机之初，就考虑到了React Native提供的API,不能够完全的覆盖平台的所有API.因此在使用React Native的时候就需要调用Native的方法，Android上面对应Java方法，IOS上对应Object-C方法。
 以调用系统的`Alert`为例，看下怎么使用JavaScript代码调用Object-C的Native方法的。
 
