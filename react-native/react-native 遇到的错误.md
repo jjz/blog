@@ -48,10 +48,28 @@ Error: watchman--no-pretty get-sockname returned with exit code 1 ERROR: Unknown
     at Pipe._handle.close [as _onclose] (net.js:492:12)
 ```
 解决方法：
+`npm`下面的包也有watchman,如果安装了先卸载
+>npm r -g watchman 
+重新安装`watchman`:
 ```
-npm r -g watchman 
-brew update && brew upgrade
-brew install watchman
+brew uninstall watchman 
+brew link pcre 
+brew install --HEAD watchman
 ```
+如果出现下面的提示错误:
+```
+Error: The `brew link` step did not complete successfully
+brew link --overwrite watchman
+......
+```
+直接运行命令:
+>brew link --overwrite watchman
+出现*Linking*创建的信息:
+```
+Linking /usr/local/Cellar/watchman/HEAD-bbd5957... 4 symlinks created
+```
+
+如果出现权限不足的情况,可以运行命令:
+>sudo chown -R `whoami` /usr/local
 
 
