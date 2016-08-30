@@ -1,4 +1,4 @@
-#Ubuntu 下安装Bitcoin Core
+#Ubuntu上安装Bitcoin Core
 
 在Ubuntu上安装Bitcoin Core除了在[官网](https://bitcoin.org/en/download)上面直接下载安装包之外，还可以使用PPA的方式安装。
 
