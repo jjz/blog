@@ -8,7 +8,7 @@ PPA:Personal Package Archives ,在Ubuntu上允许编译和发布一个apt reposi
 
 ##安装Bitcoin Core 
 首先需要添加bitcoin的源:
->sudo add-apt-repository ppa:bitcoin:/bitcoin
+>sudo add-apt-repository ppa:bitcoin/bitcoin
 
 ```
 Stable Channel of bitcoin-qt and bitcoind for Ubuntu, and their dependencies
