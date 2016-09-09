@@ -1,4 +1,4 @@
-##使用Homebrew 安装go语言sdk
+##Golang在Mac OS上的环境配置
 `Golang`是Google开发的一种编译型，平行化，具有垃圾回收功能的编译语言,还和C一样有指针。
 `Golang`是天生的网络编程语言，学习使用`Golang`先从环境配置开始。
 环境要求:
