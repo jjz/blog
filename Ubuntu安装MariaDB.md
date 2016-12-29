@@ -1,4 +1,3 @@
-#Ubuntu安装MariaDB
 MariaDB是MySQL的一个分支，主要是用来替换MySQL的，采用GPL授权许可,开源,完全兼容MySQL,包括API和命令行。由MySQL的创始人`Michael Widenius`主导开发。为什么要开发MariaDB？因为MySQL早就卖给了SUN，而SUN被甲骨文收购了，也就是说MySQL的所有权在Oracle手里。
 Maria是`Michael Widenius`女儿的名字。
 MariaDB的包并没有在Ubuntu仓库包中，下面对安装MariaDB做个记录，方便下次查看。
@@ -20,18 +19,23 @@ MariaDB的包并没有在Ubuntu仓库包中，下面对安装MariaDB做个记录
 >sudo apt-get install mariadb-server
 安装的时候会要求输入**root**密码:
 
-![图片描述][1]
+![password](http://upload-images.jianshu.io/upload_images/22188-3f90845c942bca71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 从命令行中进入MariaDB:
 >mysql -uroot -p
-![图片描述][2]
+
+![MariaDB](http://upload-images.jianshu.io/upload_images/22188-78aa48bcc82c40c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 启动mysql服务:
 >sudo /etc/init.d/mysql start
+
 ```
  * Starting MariaDB database server mysqld
    ...done.
  * Checking for corrupt, not cleanly closed and upgrade needing tables.
 ```
+
 停止mysql服务:
 >sudo /etc/init.d/mysql stop
 
@@ -47,8 +51,4 @@ MariaDB的包并没有在Ubuntu仓库包中，下面对安装MariaDB做个记录
 
 
 参考： [http://www.linuxtechi.com/install-mariadb-in-ubuntu/](http://www.linuxtechi.com/install-mariadb-in-ubuntu/)
-
-
-  [1]: /img/bVuXsT
-  [2]: /img/bVuXsU
 
