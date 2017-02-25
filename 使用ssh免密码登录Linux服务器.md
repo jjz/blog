@@ -69,6 +69,7 @@
 ##其他
 
 1.  如果公钥丢失的情况，可以使用私钥再次生成公钥,使用私钥生成公钥的命令：
+
 >ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 
 2.  使用`ssh-copy-id`上传公钥到服务器之后，公钥是存放在服务器的`~/.ssh/authorized_keys`中。它的存在格式是一行一个公钥，也可以手动把公钥的内容直接复制到服务器的authorized_keys中。使用命令`cat id_rsa.pub`可以获取到公钥的内容。
