@@ -81,7 +81,10 @@ bash的设置命令：
 >export PYTHONPATH=path/to/caffe/python:$PYTHONPATH
 
 ##使用Caffe
-
+在命令行中直接测试Caffe使用导入成功。
+>python
+>import caffe
+没有错误出现则表示Caffe安装成功。
 
 
 
