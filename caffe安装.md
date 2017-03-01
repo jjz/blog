@@ -19,3 +19,5 @@
 8. import 崩溃
  	WITH_PYTHON_LAYER:=1 https://github.com/BVLC/caffe/issues/591
 
+9. 设置PYTHON_LIB := /usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib
+
