@@ -1,4 +1,4 @@
-#Android Studio NDK开发-环境配置
+
 #Android Studio NDK开发-环境配置
 `NDK`全称**Native Development Kit**。NDK是一系列Android开发工具的集合，NDK提供了一系列的工具，可以帮助开发者在Android平台上面进行c/c++的开发，并能自动将.so打包金apk中。
 NDK集成了交叉编译器，并提供`mk文件`可以做到隔离CPU,平台以及ABI等差异，只需修改`mk文件`即可。开发人员只需要简单修改mk文件，就可以创建出适应各平台的`.so`文件。NDK还提供了一份稳定的功能有限的`Android API`头文件声明。
