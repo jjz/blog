@@ -1,4 +1,4 @@
-#Android中使用FindBugs 在Android开发中，会出现一些比较不容易发现的bug，比如对于null的判断，出现遗漏的时候会出现'NullPointException',比如下面的代码：
+# Android中使用FindBugs 在Android开发中，会出现一些比较不容易发现的bug，比如对于null的判断，出现遗漏的时候会出现'NullPointException',比如下面的代码：
 
 ```
  if (ta != null) {

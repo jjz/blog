@@ -1,4 +1,4 @@
-#Android Studio NDK开发-自定义库
+# Android Studio NDK开发-自定义库
 项目中的公共代码或者公用模块，常常使用库的方式进行管理，除了第三方库以外，开发中也常常自己定义一个库。
 在Android Studio使用`Modules`的方式让一个库的源代码在多个项目中使用，这是gradle在管理Android项目中常用的方式之一，那NDK的library库又是如何管理的呢?
 `gradle-experimental`既然是gradle的扩展插件，必然有很多的地方和gradle类似，管理类库也是采用类似的方式。
@@ -64,17 +64,17 @@ model {
 JNI代码默认放在**module**的主目录下的`./src/main/jni`中，按照这个结构新建JNI代码目录。
 JNI的库中需要定义.h文件，方便其他module直接引用，在`./src/main/jni`中新建llib.h文件
 ```
-#include <android/log.h>
+# include <android/log.h>
 
-#define  LOG_TAG "jni-lib"
-#define  LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
+# define  LOG_TAG "jni-lib"
+# define  LOGD(...) __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 
 extern  void  callMethodFromJniLib();
 ```
 
 新建llib.c文件实现llib.h中定义的方法：
 ```
-#include "llib.h"
+# include "llib.h"
 
 extern void callMethodFromJniLib() {
     LOGD("call methon from jni lib");
@@ -131,7 +131,7 @@ model {
 `jni.dependencies`中指定了依赖project：jni-lib，`linkage`的默认值为`shared`。
 这样就可以在app的jni中直接使用jni-lib中定义的方法了
 ```
-#include <llib.h>
+# include <llib.h>
 
 JNIEXPORT void JNICALL
 Java_com_jjz_NativeUtil_callLogFromJni(JNIEnv *env, jclass type) {

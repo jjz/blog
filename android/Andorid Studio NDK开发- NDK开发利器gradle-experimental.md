@@ -1,4 +1,4 @@
-#Andorid Studio NDK开发-Experimental Plugin
+# Andorid Studio NDK开发-Experimental Plugin
 使用NDK开发有件比较麻烦的事情就是编写`Application.mk`和`Android.mk`的,而Android Studio 的插件`gradle-experimental`就是用来解决这个这个问题的。使用`gradle-experimental`插件可以不用再编写`*.mk`文件的情况下进行NDK开发。
 `gradle-experimental`是Android Studio的一个实验性的项目，是基于gradle的一个插件，主要用来自动化NDK的配置实现，无需自己编写`Application.mk`和`Android.mk`，对于调试NDK项目也更加的友好，支持对于NDK的Debug。
 下面就来尝试下`gradle-experimental`的便利吧！
@@ -142,7 +142,7 @@ public class NativeUtil {
 
 注意这个时候生成直接的是`experiment.c`,没有`.h`文件，生成的jni文件的内容:
 ```
-**#include <jni.h>**
+**# include <jni.h>**
 JNIEXPORT jstring JNICALL
 Java_com_jjz_NativeUtil_firstNative(JNIEnv *env, jclass type) {
     // TODO

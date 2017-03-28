@@ -1,4 +1,4 @@
-#Android Studio NDK开发-JNI调用java函数
+# Android Studio NDK开发-JNI调用java函数
 相对于NDK来说SDK里面有更多API可以调用，有的时候我们在做NDK开发的时候，需要在JNI直接调用Java中的函数，比如callback,系统信息等....
 了解如何在JNI中调用Java方法，需要先了解`FindClass`和`GetMethodID`。
 ## FindClass和GetMethodID

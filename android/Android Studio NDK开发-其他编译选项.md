@@ -1,4 +1,4 @@
-#Android Studio NDK开发-其他编译选项
+# Android Studio NDK开发-其他编译选项
 NDK即要支持交叉编译，还需要支持各个Android版本的编译，还有一些其他情况的编译，比如c和c++等。NDK提供了一些编译选项，用来支持不同的编译需求。
 以前的NDK开发都是在`Android.mk`和`Appliction.mk`中设置,现在在`gradle-experimental`的`android.ndk{}`设置编译选项。
 其中包含了设置:编译器配置，NDK版本,Header头文件位置,gcc编译器选项等...
@@ -93,7 +93,7 @@ stl是设置c++的运行时库的选项,默认使用的是`libstdc++`最小支�
            	...
       }
 ```
-在[这里](https://developer.android.com/ndk/guides/cpp-support.html#hr)可以看到NDK支持的对应的c++运行库,建议使用动态方法链接stl,这样可以减少apk的大小。
+在[这里](https://developer.android.com/ndk/guides/cpp-support.html# hr)可以看到NDK支持的对应的c++运行库,建议使用动态方法链接stl,这样可以减少apk的大小。
 
 
 
