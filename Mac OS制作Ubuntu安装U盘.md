@@ -1,4 +1,4 @@
-#Mac OS制作Ubuntu安装U盘
+# Mac OS制作Ubuntu安装U盘
 
 采用U盘安装Ubuntu系统是目前比较常见的安装方式之一，在Windows上有制作安装U盘的工具（比如`Universal USB Installer`），那么在`Mac OS`上面如何制作安装U盘呢?
 答案是`命令行`!
@@ -20,19 +20,19 @@
 >diskutil list
 ```
 dev/disk0 (internal, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   # :                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                        *251.0 GB   disk0
    1:                        EFI EFI                     209.7 MB   disk0s1
    2:          Apple_CoreStorage Macintosh HD            250.1 GB   disk0s2
    3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
 /dev/disk1 (internal, virtual):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   # :                       TYPE NAME                    SIZE       IDENTIFIER
    0:                  Apple_HFS Macintosh HD           +249.8 GB   disk1
                                  Logical Volume on disk0s2
                                  45CD1187-14DE-4203-9895-FBB1B3770F1E
                                  Unencrypted
 /dev/disk2 (external, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   # :                       TYPE NAME                    SIZE       IDENTIFIER
    0:     Apple_partition_scheme                        *8.1 GB     disk2
    1:        Apple_partition_map                         4.1 KB     disk2s1
    2:                  Apple_HFS                         2.4 MB     disk2s2

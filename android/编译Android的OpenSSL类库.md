@@ -1,4 +1,4 @@
-#编译Android的OpenSSL类库
+# 编译Android的OpenSSL类库
 OpenSSL是一个强大的开源的安全套接字层密码库，包含了主要的密码学算法，常用的密钥和证书封装管理以及SSL协议。
 Android上的开发对于安全的需求越来越高，虽然OpenSSL出现过几次漏洞，但OpenSSL仍然是在安全方便的使用最多的加密库。
 OpenSSL是一个基于c开发的，古老的，开源的加密库，想在Android上使用OpenSSL必须要借助NDK,使用NDK编译成Android上面的动态连接库(或者静态链接库)，再借助JNI层的封装，提供给Java层调用。

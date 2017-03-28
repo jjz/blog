@@ -1,4 +1,4 @@
-# Meteor:添加用户系统
+#  Meteor:添加用户系统
 Meteor 内部实现了对用户系统的支持，可以让你的应用程序分分钟种支持多用户系统。
 要开启对于Accounts 系统和UI的支持，我们需要添加相关的packages,cd 到App的目录，添加相关的包:
 >meteor add accounts-ui
@@ -21,7 +21,7 @@ meteor add accounts-password
 在html中可以通过`currentUser`这个变量获取到用户的信息
 
 ```
-{{#if currentUser}}
+{{# if currentUser}}
     <div>
         <strong>{{currentUser.username}}</strong>
     </div>
@@ -69,7 +69,7 @@ Template.add.events({
 在lanuage信息中，显示出用户名
 ```
 <template name="detail">
-    {{#each languages}}
+    {{# each languages}}
         <div class="text"><strong>{{username}}</strong> -{{text}}</div>
     {{/each}}
 </template>

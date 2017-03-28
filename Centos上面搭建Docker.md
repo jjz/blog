@@ -1,4 +1,4 @@
-#CentOS上面搭建Docker
+# CentOS上面搭建Docker
 在CentOS上面搭建一个Docker,不要为我为什么不用Ubuntu（因为某种我不想说的原因^_^）。
 ## 环境要求
 Docker要求系统必须在CentOS 6以上，内核版本必须是2.6.32-431以上

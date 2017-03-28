@@ -51,10 +51,10 @@ Jenkins配置文件地址：
     ##  Type:        string
     ##  Default:     "/var/lib/jenkins"
     ##  ServiceRestart: jenkins
-    #
-    # Directory where Jenkins store its configuration and working
-    # files (checkouts, build reports, artifacts, ...).
-    #
+    # 
+    #  Directory where Jenkins store its configuration and working
+    #  files (checkouts, build reports, artifacts, ...).
+    # 
     JENKINS_HOME="/var/lib/jenkins"
 
 `JENKINS_USER ` 是Jenkins的用户，拥有$JENKINS_HOME和/var/log/jenkins的权限。
@@ -62,11 +62,11 @@ Jenkins配置文件地址：
     ##  Type:        string
     ##  Default:     "jenkins"
     ##  ServiceRestart: jenkins
-    #
-    # Unix user account that runs the Jenkins daemon
-    # Be careful when you change this, as you need to update
-    # permissions of $JENKINS_HOME and /var/log/jenkins.
-    #
+    # 
+    #  Unix user account that runs the Jenkins daemon
+    #  Be careful when you change this, as you need to update
+    #  permissions of $JENKINS_HOME and /var/log/jenkins.
+    # 
     JENKINS_USER="jenkins"
 
 
@@ -76,9 +76,9 @@ Jenkins配置文件地址：
     ##  Type:        integer(0:65535)  
     ##  Default:     8080
     ##  ServiceRestart: jenkins
-    #
-    # Port Jenkins is listening on.
-    # Set to -1 to disable
-    #
+    # 
+    #  Port Jenkins is listening on.
+    #  Set to -1 to disable
+    # 
     JENKINS_PORT="8080"
 

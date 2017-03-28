@@ -1,4 +1,4 @@
-#使用JSPatch热修复IOS App
+# 使用JSPatch热修复IOS App
 
 IOS App常常会遇到这种情况，线上发现一个严重`bug`,可能是某一个地方`Crash`,也可能是一个功能无法使用，这时能做的只有赶紧修复Bug然后提交`app store`等待漫长的审核。 即使申请加急审核但是审核速度仍然不会快到那里去，即使审核完了之后，还要盼望着用户快点升级，用户不升级同样的漏洞一直存在，这种情况让开发者付出了很大的成本才能完成对于`Bug`的修复,有可能还需要出现强制升级的情况。
 
@@ -42,8 +42,8 @@ defineClass("JPTableViewController", {
 ## 注册获取AppKey 在`JSPatch`平台上面注册一个账户，新建一个App就可以拿到对应的AppKey。 ## 导入SDK到项目中 SDK地址:[http://jspatch.com/Index/sdk](http://jspatch.com/Index/sdk) 当前下载下的SDK版本名称是:`JSPatch 2.framework`,需要去掉中间的空格，不然导入项目的时候会报错。 导入项目的时候要选择`Copy items if needed`。 还需要添加对于的依赖框架`JavaScriptCore.framework`和`libz.tbd`. ## 添加JSPatch代码 在`AppDelegate.m`中添加代码:
 
 ```
-#import "AppDelegate.h"
-#import <JSPatch/JSPatch.h>
+# import "AppDelegate.h"
+# import <JSPatch/JSPatch.h>
 
 @implementation AppDelegate
 

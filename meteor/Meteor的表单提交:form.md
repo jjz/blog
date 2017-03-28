@@ -1,4 +1,4 @@
-# Meteor的表单提交:form
+#  Meteor的表单提交:form
 ## Meteor中的form
 在web中时时刻刻都不能离开form，表单提交,来看看在meteor里面如何提交表单吧！
 首先是 HTML:
@@ -25,7 +25,7 @@
 </body>
 
 <template name="meteor_collection">
-    {{#each languages}}
+    {{# each languages}}
         <h3>{{name}}</h3>
     {{/each}}
 </template>

@@ -1,4 +1,4 @@
-#React Native错误:in next release empty section headers will be rendered.
+# React Native错误:in next release empty section headers will be rendered.
 升级`React Native`到最新版本出现了一个`Warning`：
 ```
 Warning:In next release empty section headers will be rendered.
@@ -16,5 +16,5 @@ In this release you can use 'enableEmptySections' flag to render empty section h
       />
 ```
 参考文档:
-  [http://facebook.github.io/react-native/docs/listview.html#enableemptysections](http://facebook.github.io/react-native/docs/listview.html#enableemptysections)
+  [http://facebook.github.io/react-native/docs/listview.html# enableemptysections](http://facebook.github.io/react-native/docs/listview.html# enableemptysections)
 

@@ -1,4 +1,4 @@
-#Ubuntu安装Jenkins
+# Ubuntu安装Jenkins
 
 在Ubuntu上安装Jenkins的持续集成环境。参考地址：http://blog.csdn.net/ruisheng_412/article/details/8066330
 

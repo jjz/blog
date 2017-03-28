@@ -1,4 +1,4 @@
-#Andorid Studio NDK开发-使用库
+# Andorid Studio NDK开发-使用库
 C语言是一个巨大的宝库，系统底层的很多的实现都是基于C语言实现的，比如图像处理，加密等。
 C语言的运行效率也是很高的，因此为了效率有时候也会引入第三方的C语言库。
 总而言之，会在NDK开发的过程中会使用大量的库，系统自带的库，第三方库等。
@@ -27,7 +27,7 @@ model{
 在Jni中调用Log库的方法:
 ```
 //引入 log
-#include <android/log.h>
+# include <android/log.h>
 
 JNIEXPORT void JNICALL
 Java_com_jjz_NativeUtil_callLogFromJni(JNIEnv *env, jclass type) {
@@ -57,8 +57,8 @@ typedef enum android_LogPriority {
 
 一般还会采用宏定义的方式，定义Log的输出的方法，方便调用：
 ```
-#define LOG_TAG "jni-log"
-#define LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
+# define LOG_TAG "jni-log"
+# define LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 
 ```
 这里定义了一个warning log的宏，在代码里面可以直接调用:
@@ -145,7 +145,7 @@ public static native byte[] getRandom();
 生成对应的JNI方法：
 ```
 //引入OpenSSL的rand
-#include <openssl/rand.h>
+# include <openssl/rand.h>
 JNIEXPORT jbyteArray JNICALL
 Java_com_jjz_NativeUtil_getRandom(JNIEnv *env, jclass type) {
     unsigned char rand_str[128];

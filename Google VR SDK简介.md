@@ -1,4 +1,4 @@
-#Google VR 开发简介
+# Google VR 开发简介
 Google的VR有两个virtual reality(VR)平台，一个是Cardboard,一个廉价的VR解决方案，2015年Goolgle的I/O推出。另一个就是今年的I/O大会刚刚推出的Daydream,期待着Daydream能够带来更加优质的，性价比高的VR解决方案。
 Cardboard:
 ![cardboard.png](http://upload-images.jianshu.io/upload_images/22188-12dd5a53fa20b0bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -22,7 +22,7 @@ Android VR的SDK可以做到：
 * 输入事件处理
 
 Android SDK使用教程: 
- https://developers.google.com/vr/android/get-started#treasure_hunt_sample_app
+ https://developers.google.com/vr/android/get-started# treasure_hunt_sample_app
 Android NDK使用教程: 
 https://developers.google.com/vr/android/ndk/get-started
 

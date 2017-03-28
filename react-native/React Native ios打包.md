@@ -1,4 +1,4 @@
-#React Native ios打包
+# React Native ios打包
 开发React Native的过程成,js代码和图片资源运行在一个`Debug Server`上，每次更新代码之后只需要使用`command+R`键刷新就可以看到代码的更改，这种方式对于调试来说是非常方便的。
 但当我们需要发布App到`App Store`的时候就需要打包,使用离线的js代码和图片。这就需要把JavaScript和图片等资源打包成离线资源，在添加到Xcode中，然后一起发布到`App Strore`中。
 打包离线资源需要使用命令`react-native bundle`(注：文中使用的项目名称为`RNIos`)

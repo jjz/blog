@@ -1,4 +1,4 @@
-# AAPT: Error retrieving parent for item: No resource found that matches the given name 'android:Widget.Material.CompoundButton.RadioButton'
+#  AAPT: Error retrieving parent for item: No resource found that matches the given name 'android:Widget.Material.CompoundButton.RadioButton'
 
 项目中要使用appcompat-v7的包，从ADT22.6.0版本之后，有了这个库，这是Google自己的一个兼容包，能让2.1以上全使用上4.0的界面，例如使用ActionBar等，不再需要使用第三方的支出库了。
 添加依赖：

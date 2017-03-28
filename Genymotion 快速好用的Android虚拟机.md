@@ -1,4 +1,4 @@
-# Genymotion 快速好用的Android虚拟机
+#  Genymotion 快速好用的Android虚拟机
 ## 什么是Genymotion
 `Genynotion`不是普通的模拟器，它是`虚拟机`,能够提供更好的`Android模拟体验`。
 它的好处:
@@ -19,11 +19,11 @@
 
 需要在`Genymotion`注册一个账户,注册地址:
 
-[https://www.genymotion.com/#!/auth/account-creation](https://www.genymotion.com/#!/auth/account-creation)
+[https://www.genymotion.com/# !/auth/account-creation](https://www.genymotion.com/# !/auth/account-creation)
 
 然后下载并安装`Genymotion`，下载地址：
 
-[https://www.genymotion.com/#!/store](https://www.genymotion.com/#!/store)
+[https://www.genymotion.com/# !/store](https://www.genymotion.com/# !/store)
 
 安装`Genymotion`之后，新建一个android虚拟机，效果如下:
 

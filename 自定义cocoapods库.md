@@ -1,4 +1,4 @@
-#自定义cocoapods库
+# 自定义cocoapods库
 
 做Ios开发会使用`Cocoapods`来管理第三方依赖库，非常好用，指定依赖，自动下载依赖。
 关于`Cocoapods`的安装可以参考[CocoaPods安装和使用教程](http://code4app.com/article/cocoapods-install-usage)这篇文章。

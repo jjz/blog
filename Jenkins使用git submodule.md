@@ -1,4 +1,4 @@
-#Jenkins使用Git Submodule
+# Jenkins使用Git Submodule
 
 项目的版本库在一些情况下需要引用其他的版本库，例如公用的代码库，可以在多个项目中调用，而公用库本身也是一个git的版本库，这个时候可以使用git子模组（`Git Submodule`）解决，`Git Submodule`允许将一个git repostory以目录的形式做为另一个git repostory的子目录。可以参考:[https://segmentfault.com/a/1190000003076028](使用Git Submodule管理子模块)
 
@@ -66,13 +66,13 @@ http://mirror.xmission.com/jenkins/updates/experimental/update-center.json
 再次构建项目,可以看到submodule的更新信息：
 ```
 ....
- git submodule init # timeout=10
- > git submodule sync # timeout=10
- > git config --get remote.origin.url # timeout=10
- > git config --get-regexp ^submodule # timeout=10
- > git config --get submodule.test.url # timeout=10
- > git remote # timeout=10
- > git config --get remote.origin.url # timeout=10
+ git submodule init #  timeout=10
+ > git submodule sync #  timeout=10
+ > git config --get remote.origin.url #  timeout=10
+ > git config --get-regexp ^submodule #  timeout=10
+ > git config --get submodule.test.url #  timeout=10
+ > git remote #  timeout=10
+ > git config --get remote.origin.url #  timeout=10
 using GIT_SSH to set credentials ...
  > git submodule update --init --recursive test
  ....

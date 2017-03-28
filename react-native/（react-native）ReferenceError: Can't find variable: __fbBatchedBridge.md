@@ -1,4 +1,4 @@
-# （react-native）ReferenceError: Can't find variable: __fbBatchedBridge
+#  （react-native）ReferenceError: Can't find variable: __fbBatchedBridge
 
 把react-native运行Android设备上的时候出现错误：
 ```

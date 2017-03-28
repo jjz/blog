@@ -1,4 +1,4 @@
-# Homebrew 安装 openssl
+#  Homebrew 安装 openssl
 Mac系统自带Openssl,但是我想通过Homebrew 安装Openssl,因为系统级的保护无法删除系统自带的openssl，我们只能利用环境变量和link让两个openssl共存。
 ## 系统自带的openssl
 先看系统自带的openssl

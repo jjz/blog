@@ -124,7 +124,7 @@ export LD_LIBRARY_PATH=/opt/glibc-2.14/lib
 
 再新建一个脚本`aapt`用来指定`glibc 2.14`的环境变量，设置环境变量之后再启动重命名的aapt_，脚本为:
 
-    #!/bin/sh
+    # !/bin/sh
     echo "$0"_$@
     export LD_LIBRARY_PATH=/opt/glibc-2.14/lib && "$0"_ $@
 

@@ -1,4 +1,4 @@
-#React Native开源项目-F8 App环境搭建
+# React Native开源项目-F8 App环境搭建
 
 Facebook在2016年的F8大会上开源了F8 App，F8 App是使用React Native开发的,毫无疑问这是一个特别棒的React Native的学习模板。项目地址：https://github.com/fbsamples/f8app
 运行起来F8 App需要React Native,Redux,Relay,GraphQL等。
@@ -23,10 +23,10 @@ cd f8app
 安装项目依赖:
 ```
 npm install
-#ios 依赖 
+# ios 依赖 
 cd ios
 pod update
-#android依赖
+# android依赖
 cd ../android
 gradle build
 ```

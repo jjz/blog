@@ -1,4 +1,4 @@
-#beego的ORM-配置数据库
+# beego的ORM-配置数据库
 `Object Relational Mapping `,简称ORM，用于实现面向对象编程语言里不通类型系统的数据之间的转换。从效果上说，它其实是创建了一个可在编程语言里使用的“虚拟对象数据库”。
 `beego`是谢大神开发的一个快速开发Go应用的Http框架，一个RESTful的框架。
 记录下如何在beego中配置数据库，以`MySql`为例

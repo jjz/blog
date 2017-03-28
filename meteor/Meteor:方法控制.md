@@ -1,4 +1,4 @@
-# Meteor:方法控制
+#  Meteor:方法控制
 在之前的例子中，我都是使用的很小的demo,所有的测试都可以在客户端直接对database进行CURD.实际的项目中有可以需要对于用户操作databse有一定的权限控制，在meteor中，最好的方法是通过自定义方法(`call method`)的形式，代替用户端直接进行，insert,update和remove。通过这种方式我们可以用权限验证的方式对于用户端提交的行为判断，确定用户的提交形式是符合我们的要求的。
 ## 移除 insecure
 每个meteor创建的项目，默认是 `insecure`的 ，默认是允许用户在客户端是可以更改database的，现在需要移除`insecure`

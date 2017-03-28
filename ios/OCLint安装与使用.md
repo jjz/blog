@@ -55,7 +55,7 @@ Error: compile_commands.json not found at current location.
 ## 脚本化 根据上面的步骤写了一个shell脚本用来执行OCLint的检查
 
 ```
-#! /bin/sh
+# ! /bin/sh
 if which oclint 2>/dev/null; then
     echo 'oclint exist'
 else

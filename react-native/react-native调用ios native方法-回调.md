@@ -1,4 +1,4 @@
-#react-native调用ios native方法-回调
+# react-native调用ios native方法-回调
 
 上一篇中介绍了使用[react-native调用ios native方法](http://www.jianshu.com/p/e8d2d8e1e21f),在真实的使用场景中，不仅仅只是调用下Native的方法，还需要对结果进行处理，Native处理完之后返回结果再回调会JavaScript中进行操作和处理。
 这样就需要使用JavaSctipt的回调函数，对结果进行处理。在React Native中Object-c有两种方式的回调:`RCTReponseSenderBlock`和`Promises`。

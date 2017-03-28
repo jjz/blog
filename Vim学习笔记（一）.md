@@ -1,7 +1,7 @@
-#Vim学习笔记（一）
+# Vim学习笔记（一）
 Vim历史
 
-#为什么要用vim
+# 为什么要用vim
 
 打字慢
 Linux
@@ -17,7 +17,7 @@ Linux
 模式
 shell直接运行
 命令
-#进入Vim的世界
+# 进入Vim的世界
 help
 i
 q

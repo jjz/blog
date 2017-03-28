@@ -1,4 +1,4 @@
-# Apache Http Client 在Android SDK 23中被移除
+#  Apache Http Client 在Android SDK 23中被移除
 把complieSdkVersion 升级为23的时候遇到了一个问题：
 
 >import org.apache.http.Header
@@ -12,5 +12,5 @@ android {
     useLibrary 'org.apache.http.legacy'
 }
 ```
-参考文档：https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0-changes.html#behavior-apache-http-client
+参考文档：https://developer.android.com/intl/zh-cn/about/versions/marshmallow/android-6.0-changes.html# behavior-apache-http-client
 

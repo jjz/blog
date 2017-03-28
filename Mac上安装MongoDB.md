@@ -1,4 +1,4 @@
-#Mac上安装MongoDB
+# Mac上安装MongoDB
 
 ## MongoDB是什么
 `MongoDB`是一个基于分布式文件存储的数据库。由`C++语言`编写。旨在为WEB应用提供可扩展的高性能数据存储解决方案。

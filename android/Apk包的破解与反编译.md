@@ -1,4 +1,4 @@
-#apk包的破解与反编译
+# apk包的破解与反编译
 关于apk包的破解,首先需要下载这三个反编译的工具:
     1. 提取资源:apktool, http://ibotpeaches.github.io/Apktool/install/
     2. 反编译:dex2jar, https://github.com/pxb1988/dex2jar

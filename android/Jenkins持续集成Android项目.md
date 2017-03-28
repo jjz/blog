@@ -1,4 +1,4 @@
-#Jenkins持续集成Android项目
+# Jenkins持续集成Android项目
 Jenkins是一个基于Java的开源的CI项目:http://jenkins-ci.org/。它包括持续的软件版本发布/测试，监控外部调用执行的工作等...
 在开发Andorid项目的时候，常常需要build新的APK,给内部人员或者外部人员测试使用,还有就是运行单元测试等...执行`gradle build`本身又比较费时。可以借助Jenkines完成自动打包，发布的工作。
 

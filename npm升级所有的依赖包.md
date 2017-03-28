@@ -1,4 +1,4 @@
-#npm升级所有的依赖包
+# npm升级所有的依赖包
 使用npm管理node的包，可以使用`npm update <name>`对单个包升级，对于npm的版本大于 `2.6.1`,可以使用命令:
 >npm install -g
 
@@ -39,9 +39,9 @@ appium@1.5.3
 
 完整的脚本：
 ```
-#!/bin/sh
+# !/bin/sh
 set -e
-#set -x
+# set -x
 for package in $(npm -g outdated --parseable --depth=0 | cut -d: -f2)
 do
     npm -g install "$package"

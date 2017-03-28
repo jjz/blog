@@ -5,7 +5,7 @@ https://github.com/opencv/opencv/pull/7159 AVFoundation support for macOS
 
 ```
 /tmp/opencv3-20161203-50490-128l1si/opencv-3.1.0/modules/videoio/src/cap_qt.cpp:63:10: fatal error: 'QuickTime/QuickTime.h' file not found
-#include <QuickTime/QuickTime.h>
+# include <QuickTime/QuickTime.h>
          ^
 1 error generated.
 make[2]: *** [modules/videoio/CMakeFiles/opencv_videoio.dir/src/cap_qt.cpp.o] Error 1

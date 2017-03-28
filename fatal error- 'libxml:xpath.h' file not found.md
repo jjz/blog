@@ -3,7 +3,7 @@ fatal error: 'libxml/xpath.h' file not found
 在MacOS上面安装readability-lxml的时候，遇到了一个问题
 
     src/lxml/includes/etree_defs.h:14:10: fatal error: 'libxml/xmlversion.h' file not found
-    #include "libxml/xmlversion.h"
+    # include "libxml/xmlversion.h"
              ^
     1 error generated.
 

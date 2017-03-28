@@ -1,4 +1,4 @@
-# Attribute "title" has already been defined
+#  Attribute "title" has already been defined
 在添加android-support-v7-appcompat之后出现了一个错误
 >error: Attribute "title" has already been defined
 

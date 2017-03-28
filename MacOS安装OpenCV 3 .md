@@ -22,7 +22,7 @@ OpenCV（Open Source Computer Vision Library）是一个基于开源发行的跨
 ```
  XXX/cap_qtkit.mm:46:9: fatal error:
    'QTKit/QTKit.h' file not found
-   #import 
+   # import 
     ^
    1 error generated.
    make[2]: *** [modulesideoio/CMakeFiles/opencv_videoio.dir/src/cap_qtkit.mm.o] Error 1
@@ -35,7 +35,7 @@ OpenCV（Open Source Computer Vision Library）是一个基于开源发行的跨
 安装过程有可能会出现的另一个错误：
 ```
 /tmp/opencv3-20161203-50490-128l1si/opencv-3.1.0/modules/videoio/src/cap_qt.cpp:63:10: fatal error: 'QuickTime/QuickTime.h' file not found
-#include <QuickTime/QuickTime.h>
+# include <QuickTime/QuickTime.h>
          ^
 1 error generated.
 make[2]: *** [modules/videoio/CMakeFiles/opencv_videoio.dir/src/cap_qt.cpp.o] Error 1

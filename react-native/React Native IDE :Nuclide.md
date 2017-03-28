@@ -1,4 +1,4 @@
-# React Native 的开发工具:Nuclide
+#  React Native 的开发工具:Nuclide
 做React Native开发的时候,没有一个好用的IDE,Android Studio打开Android下的项目还可以,JS部分的代码打开并不方便,xcode大家OC项目还可以,对于其他的语言也不友好。也没有一个比较好的方式运行React Natvie的服务,每次Run的时候都需要启动一个React Native的服务，这样就会降低开发的效率。
 还好有`Nuclide`,Nuclide是Facebook专门为React开发的IDE。Nuclide拥有更好的语法补全，类型检查等,Nulide其实是在Atom的基础上的一系列的插件集，Atom是Github打造的下一代编程开发利器，是一个完全用JavaScript开发的编辑器。
 首先要先安装Atom，下载地址：https://atom.io/

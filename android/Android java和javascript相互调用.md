@@ -1,4 +1,4 @@
-#Android:java和javascript相互调用
+# Android:java和javascript相互调用
 在当前的Android开发中，会使用大量的H5(html5+css3+js),和Native一起的混合开发模式（Hybrid），在Hybrid开发的过程中，H5部分开发效率高和移植便利性为主，但是在一些地方使用h5的确不容易实现，这个时候就需要调用Java方法来完成某些功能，就会遇到Javascript和Java相互调用，用Java的方法实现那些Javascript代码不容易，不好完成的任务，比如，异步线程，调用数据库等.....
 
 在Android 4.2之前可以使用`addjavascriptinterface`的方式注入原生的Java中,给JavaScript调用,但是这种方案却会有一定的安全风险，在页面中执行一些不可信的Javascript代码即可能控制用户的手机,详情见:[WebView中接口隐患与手机挂马利用](http://drops.wooyun.org/papers/548)

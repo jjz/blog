@@ -1,4 +1,4 @@
-#react-native:环境搭建
+# react-native:环境搭建
 ```
 Any application that than can be written in JavaScript will eventually be written in JavaScript -Jeff Atwood
 ```

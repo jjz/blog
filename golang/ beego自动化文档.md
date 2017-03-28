@@ -1,4 +1,4 @@
-# beego自动化文档
+#  beego自动化文档
 ## beego是什么？
 `beego`是一个快速开发*go应用*的**http框架**，`go 语言`技术大牛[ASTA谢](http://weibo.com/533452688?refer_flag=1005055013_)的开源项目。
 `beego`可以用来快速开发*API*、*Web*以及*后端服务*等各种应用，是一个`RESTFul`的框架，主要设计灵感来源于`tornado`、`sinatra`、`flask`这三个框架，结合了Go本身的一些特性(`interface`、`struct`继承等)而设计的。

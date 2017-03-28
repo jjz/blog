@@ -1,4 +1,4 @@
-# Meteor其他事件的处理
+#  Meteor其他事件的处理
 除了表单提交以外，还有我们日常用到的CRUD操作，对object操作的四个方法: *Read/Insert/Update/Delete*
 Read这个在一开始的例子中就有说到的:`db.object.find()`,通过`Tempalte.tempaltes.helpers`给变量赋值，在html中使用模板语言对变量进行操作。
 Insert在之前的from表单提交中介绍的就是Insert操作。
@@ -16,7 +16,7 @@ Insert在之前的from表单提交中介绍的就是Insert操作。
 
 ```
 <template name="other_event">
-    {{#each others}}
+    {{# each others}}
         <li>
             <h3>{{name}} ,{{updateAt}}</h3>
             <button class="delete">delete</button>

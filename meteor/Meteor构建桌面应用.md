@@ -1,4 +1,4 @@
-# Meteor构建桌面应用
+#  Meteor构建桌面应用
 之前写了如何是`Meteor`如果构建ios和Android应用,[Meteor构建Android应用](http://www.jianshu.com/p/aa5d99401764)和[Meteor构建ios应用](http://www.jianshu.com/p/09e908444689),Meteor出了能使用在Web，ios，Android上面以外，还能用来构建桌面应用。
 ## 怎么样构建桌面应用？
 使用`Meteor`能够构建桌面系统，还要依赖与`Nodejs`的快速发展。

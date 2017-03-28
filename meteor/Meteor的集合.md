@@ -1,4 +1,4 @@
-#Meteor的集合:Collections的使用
+# Meteor的集合:Collections的使用
 ## Collections是什么
 `Collections`是Meteor存储数据的方式，数据库使用的是`MongoDB`。
 `Collections`允许访问客户端和服务端，会自动更新，当`Collections`发生改变的时候，所有使用`Collections`的组件都会被更新。使用`Collections`不需要编写大量的服务器代码就可以方便的更新页面逻辑。
@@ -19,7 +19,7 @@
 在模板中显示查询到的数据:
 ```
     <template name="meteor_collection">
-      {{#each languages}}
+      {{# each languages}}
           <h3>{{name}}</h3>
       {{/each}}
     </template>

@@ -1,4 +1,4 @@
-#beego自动化部署
+# beego自动化部署
 `beego`是Golang写的应用程序开源框架http://beego.me/，我使用`beego`写了一个项目小项目，golang是编译语言，需要编译之后再部署，每次部署到服务上是件很麻烦的事情。就写了一个自动打包部署到服务器的脚本，方便发布部署。
 
 ## 项目结构
@@ -87,11 +87,11 @@ stdout_logfile =/var/log/supervidrod/beepkg.log
 使用`supervisorctl`命令可以进入shell界面，管理`program`。
 比如：
 ```
-#启动进程
+# 启动进程
 strat beepkg
-#停止进程
+# 停止进程
 stop beepkg
-#重启进程
+# 重启进程
 restart beepkg
 ```
 注意如果`Supervisor`的配置文件更改之后一定要使用`reload`才能使配置修改的配置文件生效。
@@ -111,11 +111,11 @@ unlink /tmp/supervisor.sock
 ## 最终脚本
 解压文件并重启服务的脚本`restart.sh`:
 ```
-#! /bin/bash
-#默认进入的是登录用户的目录
+# ! /bin/bash
+# 默认进入的是登录用户的目录
 cd test/bee
 tar -xzvf beepkg.tar.gz
-#remove conf of dev
+# remove conf of dev
 rm -rf conf/app.conf
 cp conf/app.conf.bat conf/app.conf
 supervisorctl restart beepkg
@@ -123,7 +123,7 @@ supervisorctl restart beepkg
 
 本地开发环境部署脚本`deploy.sh`:
 ```
-#! /bin/bash
+# ! /bin/bash
 echo 'update code'
 git reset HEAD --hard
 git pull origin master

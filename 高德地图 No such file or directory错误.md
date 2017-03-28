@@ -1,4 +1,4 @@
-# 高德地图使用cocoapods No such file or directory错误
+#  高德地图使用cocoapods No such file or directory错误
 高德地图使用`cocoapods`出现 No such file or directory错误
 ```
 Errno::ENOENT - No such file or directory - /Users/newuser/Documents/umu/ios_fast_dealer/Pods/AMapSearch/AMapSearchKit.framework/Resources

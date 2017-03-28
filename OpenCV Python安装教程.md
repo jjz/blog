@@ -6,7 +6,7 @@
 
 OpenCV的安装目录为：`/usr/local/Cellar/opencv/`。
 也可以从[官网](http://opencv.org/)下载安装包直接安装。比较复杂的是下载源代码使用`cmake`安装。
-## #cv2
+## # cv2
 
 OpenCV在Python中调用的时候使用的库是`cv2`。在python中可以直接使用`cv2`:
 >import cv2
@@ -45,7 +45,7 @@ sudo make install
 >sudo apt-get install python-opencv
 
 完整脚本地址：[https://github.com/jjz/script/blob/master/opencv-python.sh](https://github.com/jjz/script/blob/master/opencv-python.sh)
-## #使用OpenCV
+## # 使用OpenCV
 一个简单用来验证Python是否能够调用OpenCV的方法:
 >import cv2
 >cv2.__version__

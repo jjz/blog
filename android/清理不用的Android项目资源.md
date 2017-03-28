@@ -1,4 +1,4 @@
-#清理不的Android项目资源
+# 清理不的Android项目资源
 
 `Andorid Lint`是*SDK Tools 16(ADT 16)*之后提供的一个工具，可以对于Android项目的源代码进行扫描和检查，发现潜在的问题，其中的一个功能`UnuserdResources`用来检查不用的资源文件。根据`UnserdResources`生成的内容，可以清理掉不再使用的项目文件。
 

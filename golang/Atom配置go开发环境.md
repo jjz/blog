@@ -1,4 +1,4 @@
-#Atom配置go开发环境
+# Atom配置go开发环境
 一直没有找到一个比较好用的golang的IDE，虽然IntelliJ还不错，但是收费版的实在是太贵了，免费版的又是各种功能缺失，今天尝试了一下在Atom上面配置Golang的开发环境，发现效果很不错，记录下配置环境的步骤。
 首先要先安装下Atom,Atom是github打造的文本编辑器:https://atom.io/,开源，美观，有各种强大的插件，可以直接下载安装。
 安装Go，Mac上面的安装：https://segmentfault.com/a/1190000003933557

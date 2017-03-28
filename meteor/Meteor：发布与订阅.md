@@ -1,4 +1,4 @@
-# Meteor：发布与订阅
+#  Meteor：发布与订阅
 我们可以使用安全的方法让用户端不直接操作数据库，但是还是可以直接读取数据库内容，如果我们还需要保护私有的数据存储,在客户端直接使用`Collection.find()`，这样的操作方式在实际的项目中并不会使用，这样的数据无法保证私有性和安全性。如果一些数据我们并不想自动的在客户端更新，就需要自定义`publish`和`subscribe`，如何在*Meteor*中自定义发布与订阅模式呢?
 
 ## Remove Autopublish
@@ -7,7 +7,7 @@
 
 移除之后在我们添加数据以后，页面就不再直接显示数据了。想要显示数据，我们需要使用`Meteor.publish`和`Meteor.subscribe`方法，让服务端通知客户端的数据更新。
 ## 发布与订阅
-## #publish
+## # publish
 ```
 if (Meteor.isServer) {
     Meteor.publish("languages", function () {
@@ -16,7 +16,7 @@ if (Meteor.isServer) {
 }
 
 ```
-## #subsribe
+## # subsribe
 ```
 if (Meteor.isClient) {
     Meteor.subscribe("languages");
@@ -32,12 +32,12 @@ if (Meteor.isClient) {
 在页面上添加一个private的按钮:
 ```
 <template name="other_event">
-    {{#each others}}
+    {{# each others}}
         <li>
             <h3>{{name}} ,{{updateAt}}</h3>
             <button class="delete">delete</button>
             <button class="update">update</button>
-            {{#unless private}}
+            {{# unless private}}
                 <button class="private">private</button>
             {{/unless}}
         </li>

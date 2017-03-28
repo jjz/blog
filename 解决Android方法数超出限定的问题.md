@@ -1,4 +1,4 @@
-#解决Android中方法数超过限定的问题
+# 解决Android中方法数超过限定的问题
 在Android项目中引入过多的jar会出现错误：
 >android.dex.DexIndexOverflowException: Cannot merge new index xxxx into a non-jumbo instruction!
 

@@ -1,4 +1,4 @@
-#微信小程序开发:MINA
+# 微信小程序开发:MINA
 
 MINA是微信开发小程序的框架：
 >MINA的目标是通过尽可能简单，高效的方式让开发者可以在微信中开发具有原生APP体验的服务。
@@ -11,7 +11,7 @@ MINA框架中有四种类型的文件:
 * `.wxss` 样式文件，用于描述WXML的组件样式
 * `.json` 文件，配置文件，用于单个页面的配置和整个项目的配置
 
-#目录结构
+# 目录结构
 为了减少配置项，小程序中一个页面中的四个文件必须要有相同的路径和文件名,使用`微信web开发者工具`新建一个项目,可以看到他的目录结构是这样的：
 
 ![目录结构](http://upload-images.jianshu.io/upload_images/22188-82c5408a9f5a52a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -60,12 +60,12 @@ onHide: function () {
 ```
 "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "# ffffff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
   }
 ```
-使用的Color为十六进制的颜色值,比如"#ffffff"
+使用的Color为十六进制的颜色值,比如"# ffffff"
 注意:
 其中`navigationBarTextStyle`，导航栏的颜色仅支持`black/white`。
 而`backgroundTextStyle`，下拉背景的样式仅支持`dark/light`。
@@ -73,10 +73,10 @@ onHide: function () {
 * `tabBar`: 设置tab应用，`tabBar`是一个数组，最少需要配置2个，最多能配置5个tab，tab按照数据的顺序排序：
 ```
 "tabBar":{
-    "color":"#dddddd",
-    "selectdColor":"#3cc51f",
+    "color":"# dddddd",
+    "selectdColor":"# 3cc51f",
     "borderStyle":"black",
-    "backgroundColor":"#ffffff"
+    "backgroundColor":"# ffffff"
   ,"list":[
     {
       "pagePath":"pages/index/index",

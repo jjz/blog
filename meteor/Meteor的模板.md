@@ -24,7 +24,7 @@ meteor-template.js
     </body>
     <template name="meteor_study">
         <h2>{{templateName}}</h2>
-        {{#each languages}}
+        {{# each languages}}
             <h3>{{name}}</h3>
         {{/each}}
     </template>
@@ -37,8 +37,8 @@ meteor-template.js
 他具有以下常用的语法:
 
 * `{{> meteor_study}}`导入指定的模板
-* `{{#each langages}} {{/each}}`循环
-* `{{#if done}}done{{else}}notdone{{/if}}` if判断
+* `{{# each langages}} {{/each}}`循环
+* `{{# if done}}done{{else}}notdone{{/if}}` if判断
 * 等...
 详细的说明可以[参考](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)。
 
@@ -59,8 +59,8 @@ meteor-template.js
 ```
     body {
         font-family: sans-serif;
-        background-color: #315481;
-        background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+        background-color: # 315481;
+        background-image: linear-gradient(to bottom, # 315481, # 918e82 100%);
         background-attachment: fixed;
     
         position: absolute;
@@ -77,8 +77,8 @@ meteor-template.js
     
     
     header {
-        background: #d2edf4;
-        background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+        background: # d2edf4;
+        background-image: linear-gradient(to bottom, # d0edf5, # e1e5f0 100%);
         padding: 20px 15px 15px 15px;
         position: relative;
     }

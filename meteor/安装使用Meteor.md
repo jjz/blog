@@ -1,4 +1,4 @@
-# Meteor是什么
+#  Meteor是什么
 ##  Meteor是什么
 `Meteor`是一种最新的`JavaScript`框架，用于自动化和简化实时运行的Web应用程序的开发，它使用分布式数据协议-`(Distributed Data Protocol,DDP)`的协议来处理实时通信，使用支持`WebSocket`的浏览器以及使用`Asynchronous JavaScript +XML(Ajax)`长轮询的旧浏览器支持这种协议，浏览器到服务器的通信是透明的。
 
@@ -42,7 +42,7 @@
       meteor
  ```    
 
-#运行Meteor
+# 运行Meteor
  运行`meteor`可以直接运行`meteor`项目:
 > meteor
  

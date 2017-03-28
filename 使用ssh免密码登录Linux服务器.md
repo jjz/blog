@@ -59,7 +59,7 @@
 
 	RSAAuthentication yes
 	PubkeyAuthentication yes
-	#AuthorizedKeysFile     %h/.ssh/authorized_keys
+	# AuthorizedKeysFile     %h/.ssh/authorized_keys
 	
 然后重启ssh-server：
 >sudo /etc/init.d/ssh restart

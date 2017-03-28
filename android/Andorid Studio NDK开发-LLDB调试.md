@@ -1,4 +1,4 @@
-#Andorid Studio NDK开发-LLDB调试
+# Andorid Studio NDK开发-LLDB调试
 LLDB是一个高效的c/c++的调试器，他与LLVM编译器一起使用，提供了丰富的流程控制和数据检测,有效的帮忙我们调试程序。
 LLDB是XCode中默认的调试器，Android Studio中可以在SDK Tools中下载LLDB最新版本，在Android Studio中和`gradle-experimental`一起调试NDK项目。
 

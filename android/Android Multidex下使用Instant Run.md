@@ -1,4 +1,4 @@
-#Android 在Multidex下使用Instant Run
+# Android 在Multidex下使用Instant Run
 `Instant Run`是Android studio 2.0的新功能，在`Run`和`Debug`的时候，只有在第一次build会花费大量的时间。之后再次`Run`或者`Debug`的时候会直接更新到手机上面生成一个新的APK,这样就会很快的显示出变化，加快了开发效率。
 `Instant Run`要求Gradle的版本在2.0.0以上，minSdkVersion为15，最好的minSdkVersion是21。随着Android studio 2.0正式版上线，想正式使用`Instant Run`功能，但是却遇到了一个问题：
 ```

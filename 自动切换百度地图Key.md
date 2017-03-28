@@ -1,4 +1,4 @@
-#用gradle自动配置百度地图Key
+# 用gradle自动配置百度地图Key
 在开发中需要使用百度地图，百度地图会需要有两个key:*release*和*debug*,需要使用对应的签名证书的`SHA1`在百度地图的开发平台上申请（http://lbsyun.baidu.com/apiconsole/key）。
 获取签名证书`SHA1`的方式：
 cd到`.android`所在的目录:
