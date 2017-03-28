@@ -152,7 +152,3 @@ HelloJni中使用关键词`native`定义了一个方法，`native`:一个Natvie 
 
 项目地址：https://github.com/jjz/android/tree/master/Jni
 
-
-
-
-

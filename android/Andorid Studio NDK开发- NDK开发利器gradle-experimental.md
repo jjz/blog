@@ -168,7 +168,3 @@ Java_com_jjz_NativeUtil_firstNative(JNIEnv **env, jclass type) {
 可以看到使用`gradle-experimental`开发NDK,不需要再做复杂的配置，自动化native方法，不需要自定义.h头文件，对开发更加友好。
 
 文中源代码地址:[https://github.com/jjz/android/tree/master/experimental](https://github.com/jjz/android/tree/master/experimental)
-
-
-
-
