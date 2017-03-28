@@ -1,32 +1,33 @@
-# Andorid Studio NDK开发-LLDB调试
-LLDB是一个高效的c/c++的调试器，他与LLVM编译器一起使用，提供了丰富的流程控制和数据检测,有效的帮忙我们调试程序。
-LLDB是XCode中默认的调试器，Android Studio中可以在SDK Tools中下载LLDB最新版本，在Android Studio中和`gradle-experimental`一起调试NDK项目。
+# Andorid Studio NDK开发-使用LLDB调试
+`LLDB`是一个高效的`c/c++`的调试器，是与`LLVM编译器`一起使用，提供了丰富的流程控制和数据检测,有效的帮忙我们调试程序。`LLDB`也已经取代GDB成为XCode的默认调试器，`Android Studio`中也可以使用`LLDB`调试NDK程序，在`Android Studio`也中可以`LLDB`,从`SDK Tools`中下载`LLDB`最新版本，配合`Android Studio`和`gradle-experimental`一起调试NDK项目，会更加的方便。
 
 ## LLDB安装
-在Androis Studio中的Toolbar中可以找到Android的更新图标，打开可以看到Android SDK的升级配置，在SDK Tools中可以找到LLDB的安装选项。
+在`Androis Studio`的`Toolbar`中可以找到Android的更新图标，打开可以看到Android SDK的升级配置，在`SDK Tools`中可以找到`LLDB`的安装选项。
 
-![634A174A-C358-40DD-A54F-C51382FECDF0.png](http://upload-images.jianshu.io/upload_images/22188-e998f2f638af115e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![安装LLDB](http://upload-images.jianshu.io/upload_images/22188-e998f2f638af115e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-在上一篇的[Andorid Studio NDK开发-Experimental Plugin](http://www.jianshu.com/p/dc63d8997df2)中介绍了使用gradle-experimental可以简化NDK的开发配置，其中提到了在运行选项中有两个运行的配置选项`app`和`app-native`,其中的app-native就是用来运行和调试JNI开发的。
+究竟如何使用`LLDB`调试NDK程序呢？在上一篇的[Andorid Studio NDK 开发 - NDK 开发利器 gradle-experimental](https://juejin.im/post/58d997dd44d90400694754d2 )中介绍了使用`gradle-experimental`可以简化NDK的开发配置，其中提到了在运行选项中有两个运行的配置选项`app`和`app-native`,其中的app-native就是用来运行和调试JNI开发的。`app-native`不仅仅可以直接运行，也可以进行Debug,选中`aap-native`之后，直接选择debug按钮就可以进入NDK的Debug模式
 
 ## Debug JNI
-选择`app-native`，点击debug按钮可以直接进入Debug状态：
 
-![debug](http://upload-images.jianshu.io/upload_images/22188-b7f5571df9640a3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+选择`app-native`，点击debug按钮可以直接进入Debug状态，在一段代码处设置一个断点，如图所示：
 
-可以看到程序在断点处暂停了，在左侧的状态里面可以看到变量的值和指针地址:
+![断点](http://upload-images.jianshu.io/upload_images/22188-b7f5571df9640a3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-![variables](http://upload-images.jianshu.io/upload_images/22188-a15de7514a8e34b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+可以看到程序运行到断点出，就进入了Debug状态，在左侧的状态里面可以看到变量的值和指针地址:
 
+![变量信息](http://upload-images.jianshu.io/upload_images/22188-a15de7514a8e34b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+程序进入了Debugz状态，但是并没有使用到`LLDB`,下面就使用下`LLDB`强大的功能。
 
-## LLDB
-从上面的图中可以看到除了`Variables`以外还有一个tab是`LLDB`,点击进入可以看到`(lldb)`的命令行，在这里面我们可以输入LLDB的命令，帮助调试程序。
+## 使用LLDB
+
+从上面的图中可以看到除了`Variables`的Tab页以外，还有一个Tab页就是`LLDB`,点击进入可以看到`(lldb)`的命令行，在命令行里面可以输入`LLDB`的命令，`LLDB`命令有很多强大的能力，比如，打印，寻址，调用堆栈等，通过这些命令可以有效的帮助调试NDK程序。
 
 ![lldb](http://upload-images.jianshu.io/upload_images/22188-d989d52be1d54e6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 ## LLDB常用命令
+
 * print (p)打印命令，打印变量以及其值
 > p chars
 ```
