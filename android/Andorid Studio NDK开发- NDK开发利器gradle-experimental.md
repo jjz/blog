@@ -119,7 +119,7 @@ model {
 在`sources`分别指定了`java`源代码和`jni`源代码的目录。
 以上的配置完成之后，就可以使用`gradle experimental`开始NDK开发了。
 
-## 使用`gradle experimental`
+## 使用gradle experimental
 在java里面定义一个`native`方法,native标识的方法会需要在jni中实现，可以在java中调用,还需要加载NDK生成的`.so`类库。
 ```
 public class NativeUtil {
