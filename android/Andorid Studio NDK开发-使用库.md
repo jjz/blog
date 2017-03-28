@@ -4,7 +4,7 @@ C语言的运行效率也是很高的，因此为了效率有时候也会引入�
 总而言之，会在NDK开发的过程中会使用大量的库，系统自带的库，第三方库等。
 在`gradle-experimental`中使用C语言的库是非常便利的。
 
-##使用系统库
+## 使用系统库
 Log是在Android开发过程用来调试程序必备的工具之一，如何在NDK中使用`android.util.Log`方便在Logcat中查看JNI程序的运行情况呢？这就需要在NDK中导入Android系统的`Log`库。
 首先需要在在`gradle`中引入Log库：
 ```
@@ -66,7 +66,7 @@ typedef enum android_LogPriority {
   LOGW("log from  define");
 ```
 
-##使用第三方类库
+## 使用第三方类库
 OpenSSL是最常用的加密库之一，下面以OpenSSL为例，介绍下在`gradle-experimental`中如何引入第三方类库。关于如何编译Android下的OpenSSL详见：[编译Android的OpenSSL类库](http://www.jianshu.com/p/1b60337991f9)。
 首先定义对于库的`repositories`:
 ```
@@ -136,7 +136,7 @@ model{
      }
 ```
 
-##使用OpenSSL
+## 使用OpenSSL
 首先定义一个`native`方法，需要从OpenSSL中读取随机数：
 ```
 public static native byte[] getRandom();

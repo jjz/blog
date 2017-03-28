@@ -1,5 +1,5 @@
 作为一个Android开发者，很多的时候我们需要花大量的时间在bulid，运行到真机（虚拟机）上，对于ios上的`Playground`羡慕不已，这种情况将在Android Studio 2.0有了很大改善，使用`instant run`，在第一次运行之后，就可以快速的在真机中看见修改后的结果，不仅仅是UI可以直接显示，还包括代码逻辑。不用再苦苦等build了，节约生命呀！
-##首先要升级到Android Studio 2.0
+## 首先要升级到Android Studio 2.0
 目前Android Studio的2.0版本还在`Canary Channel`（金丝雀） 上面，所以想体验2.0的同学需要先把升级版本切换到Canary Channel 上面。
 
  >Preferences -> System Settings ->Updates
@@ -12,7 +12,7 @@
 
 然后`check for updates` 就可以升级了。（如果连接不上升级服务器，请墙一下）
 
-## 升级android tools build
+##  升级android tools build
 `instant run`功能之后再`android tools build` 的`2.0.0`的版本才可以使用。
 需要在`build.gradle`中指定
 
@@ -26,7 +26,7 @@ buildscript {
     }
 }
 ```
-##设置instant Run
+## 设置instant Run
 >Preferences -> Build,Execution,Deployment -> Instant Run
 
 
@@ -40,7 +40,7 @@ buildscript {
 
 *第三个是，每次变动的时候都有个toast提示下（我选择关闭了）*
 
-##运行Instant Run 
+## 运行Instant Run 
 再没有运行项目的时候，我们的Run图标和以前是一样的。
 
 ![Run](http://upload-images.jianshu.io/upload_images/22188-774b89135d49043a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

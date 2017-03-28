@@ -8,7 +8,7 @@ Google有专门的VR的delelopers页面：https://developers.google.com/vr/。�
 
 Google VR有三个SDK：Unity 3D,Android,IOS，他们同样的都支持Cardboard和Daydream
 
-##Android VR
+## Android VR
 Android平台有Java版本对应的SDK，和c/c++对应的NDK.
 熟悉OpenGL的开发者能够快速的使用Google VR SDK创建VR程序，还可以Android Studio直接开发。
 Android VR的SDK可以做到：
@@ -26,14 +26,14 @@ Android SDK使用教程:
 Android NDK使用教程: 
 https://developers.google.com/vr/android/ndk/get-started
 
-##IOS VR
+## IOS VR
 Google VR 的IOS SDK是采用Objective-c编写的。当然是需要在XCode中运行的，IOS平台上面也提供了对应的CocoaPod类库，使用：
 >pod CardboardSDK
 
 可以直接使用CardboardSDK。
 同样的,在Android的SDK上面能够处理的事情，使用IOS的SDK也可以做到。
 IOS SDK使用教程：https://developers.google.com/vr/ios/get-started
-##Unity 3D VR
+## Unity 3D VR
 Unity 3D是三维动画的开发工具，Google VR 有对应的Unity 3D下的SDK.
 Unity SDK支持构建Android下的Daydream和Cardboard，而在IOS设备上面目前还不支持使用Unity 3D开发Daydream，只支持Cardboard。
 Unity 3D VR的特点:

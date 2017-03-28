@@ -1,6 +1,6 @@
 #CentOS上面搭建Docker
 在CentOS上面搭建一个Docker,不要为我为什么不用Ubuntu（因为某种我不想说的原因^_^）。
-##环境要求
+## 环境要求
 Docker要求系统必须在CentOS 6以上，内核版本必须是2.6.32-431以上
 查看CentOS版本:
 >cat /etc/issue
@@ -13,14 +13,14 @@ Kernel \r on an \m
 ```
 2.6.32-573.el6.x86_64
 ```
-##安装Docker
+## 安装Docker
 运行命令:
 >yum update
 >sudo yum install docker-io
 
 第一条命令是更新下现有库。
 
-##启动Docker
+## 启动Docker
 >sudo service docker start
 
 ```

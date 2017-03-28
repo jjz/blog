@@ -5,7 +5,7 @@
     3. 查看源码工具:jd-gui, http://jd.benow.ca/
 这里以`开源中国`的android版本为例，看下怎么进行破解和反编译apk。
 
-##apktool
+## apktool
 apk-tool是apk反编译的神器，用来提取apk内的资源。
 下载apk-tool之后会得到一个jar包，运行:
 >java -jar apktool_2.1.0.jar decode oschina/osc-android-app-2.4.apk
@@ -30,7 +30,7 @@ I: Copying original files...
 
 这里有一个`smali`目录，它对应的是原始Android项目的`src目录`，就是Java的源代码。*smali*是**Dalvik虚拟机指令语言**，可以在https://github.com/JesusFreke/smali 这里查看smali的更多内容。
 
-##dex2jar
+## dex2jar
 `dex2jar`是一个能操作Android的delvik(.dex)文件格式和Java的（.class）的工具集合。主要功能有：
 
 	1. d2j-dex2jar:执行dex到class的转换
@@ -45,7 +45,7 @@ I: Copying original files...
 
 得到文件`classes-dex2jar.jar`,得到的这个`.jar`文件可以使用`jd-gui`打开阅读代码。
 
-##jd-gui
+## jd-gui
 `jd-gui`是java的反编译器`Java Decompiler project`,把二进制的可执行文件翻译成代码。
 `jd-gui`提供了一个图形化的界面:
 

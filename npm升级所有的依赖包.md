@@ -6,7 +6,7 @@
  
 对于版本小于`2.6.1`的一个一个包的升级实在是太麻烦，就想找到一个升级所有本地包的方法，找到两个比较好的方式:`shell脚本`和`npm-ckeck`
 
-##shell脚本
+## shell脚本
 使用shell脚本升级npm包，首先所在找到需要升级的包和版本号，再使用`npm install`完成升级。
 `npm -g`是管理本地全局包的命令。通过`npm -g outdated`可以查看那些包有更新：
 >npm -g outdated 
@@ -48,7 +48,7 @@ do
 done
 ```
 脚本下载地址：[https://github.com/jjz/script/blob/master/npm-upgrade.sh](https://github.com/jjz/script/blob/master/npm-upgrade.sh)
-##npm-check
+## npm-check
 
 [npm-check](https://www.npmjs.com/package/npm-check)是用来检查npm依赖包是否有更新，错误以及不在使用的，我们也可以使用npm-check进行包的更新。
 安装npm-check：

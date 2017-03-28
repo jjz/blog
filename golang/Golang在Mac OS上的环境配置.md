@@ -1,16 +1,16 @@
-##Golang在Mac OS上的环境配置
+## Golang在Mac OS上的环境配置
 `Golang`是Google开发的一种编译型，平行化，具有垃圾回收功能的编译语言,还和C一样有指针。
 `Golang`是天生的网络编程语言，学习使用`Golang`先从环境配置开始。
 环境要求:
 * `Homerbrew`   安装参考:[http://brew.sh/](http://brew.sh/)
 
-##安装Golang
+## 安装Golang
 `Golang`可以通过源代码自己编译安装[https://golang.org/project/](https://golang.org/project/),为了管理和升级建议使用`Homerbrew`安装。
 使用命令行直接安装`Golang`:
 >brew install  go
 ```
 ==> Downloading https://homebrew.bintray.com/bottles/go-1.7.el_capitan.bottle.tar.gz
-######################################################################## 100.0%
+## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##  100.0%
 ==> Pouring go-1.7.el_capitan.bottle.tar.gz
 ==> Caveats
 As of go 1.2, a valid GOPATH is required to use the `go get` command:
@@ -22,7 +22,7 @@ You may wish to add the GOROOT-based install location to your PATH:
 ```
 
 从提示中可以看出需要设置`GOPATH`和`GOROOT`的环境变量，以及设置`PATH`.
-##配置GOPATH
+## 配置GOPATH
 查看go 的环境变量设置的命令
 >go env 
 ```

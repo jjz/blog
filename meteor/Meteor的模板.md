@@ -10,7 +10,7 @@ meteor-template.js
 这三个文件就是模板文件,`.js`文件是逻辑和数据控制文件,`.css`文件是样式文件。
 访问`.html`文件会自动加载`.js`和`.css`文件。
 
-##在HTML文件中使用Meteor模板
+## 在HTML文件中使用Meteor模板
 
 `Meteor模板`定义三个最高级别的标签`<head>` `<body>` `<template>`
 ```
@@ -32,7 +32,7 @@ meteor-template.js
 不用写`<!DOCTYPE html>`了，能省则省!
 `Meteor`的模板可以自由的使用html标签比如上面的使用的`<h1>`标签。
 
-##在模板中使用逻辑
+## 在模板中使用逻辑
 `{{}}`是模板语言，是安全的不会输出`html`标签
 他具有以下常用的语法:
 
@@ -42,7 +42,7 @@ meteor-template.js
 * 等...
 详细的说明可以[参考](https://github.com/meteor/meteor/blob/devel/packages/spacebars/README.md)。
 
-##给模板中的变量赋值
+## 给模板中的变量赋值
 在`MVC`的模式中可以在Controller层给View层赋值，在`Meteor`中也可以在`.js`文件中给模板赋值:
 ```
     if (Meteor.isClient) {
@@ -54,7 +54,7 @@ meteor-template.js
     }
 ```
 其中`Meteor.isClient`这句话判断是不是在客户端，在客户端就使用`Template.meteor_study.helpers` 给模板变量赋值。使用`templateName`和`languages`分别定义了一个字符串和一个数组。
-##使用css
+## 使用css
 `.css`文件负责控制样式,在meteor-template.css添加代码:
 ```
     body {

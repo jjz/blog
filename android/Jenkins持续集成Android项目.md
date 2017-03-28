@@ -2,7 +2,7 @@
 Jenkins是一个基于Java的开源的CI项目:http://jenkins-ci.org/。它包括持续的软件版本发布/测试，监控外部调用执行的工作等...
 在开发Andorid项目的时候，常常需要build新的APK,给内部人员或者外部人员测试使用,还有就是运行单元测试等...执行`gradle build`本身又比较费时。可以借助Jenkines完成自动打包，发布的工作。
 
-##安装Jenkins
+## 安装Jenkins
 在这里:http://jenkins-ci.org/可以下载最新的Jenkins安装包。
 下载完成之后开始安装:
 ![图片描述][1]
@@ -15,7 +15,7 @@ Jenkins是一个基于Java的开源的CI项目:http://jenkins-ci.org/。它包�
 也可以通过命令启动:
 > java -jar jenkins.war
 
-##安装插件
+## 安装插件
 需要安装插件`git`,`gradle`,`android`三个插件，`android`插件可以帮助下载android sdk如果已经有android sdk可以不用安转该插件。
 在右侧的菜单栏中的`系统管理`里面可以找到`管理插件`，在`可选插件`中搜索`gradle`
 系统管理:
@@ -26,7 +26,7 @@ Jenkins是一个基于Java的开源的CI项目:http://jenkins-ci.org/。它包�
 安装完成之后重启Jenkins
 ![图片描述][5]
 
-##创建任务
+## 创建任务
 创建一个新任务，选择构建一个自由风格的软件项目：
 ![图片描述][6]
 
@@ -41,7 +41,7 @@ Jenkins是一个基于Java的开源的CI项目:http://jenkins-ci.org/。它包�
 输入:example/build/outputs/apk/*.apk用来保存编译的Apk文件。
 ![图片描述][10]
 
-##开始构建
+## 开始构建
 开始第一次构建：
 有一个错误产生：
 ```

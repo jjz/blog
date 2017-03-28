@@ -7,7 +7,7 @@
 可以自定义一个`Cocoapods`的库来解决这个问题，不需要提交到`Cocoapods`。
 自定义一个公共`Cocoapods`库可以封装公共代码，提高代码的复用，减少代码的维护。
 自定义`Cocoapods`库，需要先生成`podspec`。
-## 生成podspec
+##  生成podspec
 **podspec**是用来指定为`Cocoapods类库`的配置文件(Ruby语法)
 可以使用命令创建`podspec`文件：
 > pod lib create MyLibrary
@@ -80,7 +80,7 @@
 
 
 
-##在项目中调用pod-library
+## 在项目中调用pod-library
 创建一个和`pod-library`同级的目录，命名为pod-project,用来调用`pod-library`。
 在pod-project目录中添加Podfile。
 指定对pod-library的依赖：
@@ -107,7 +107,7 @@
 可以看到pod先去下载pod-library，然后再下载已经指定的pod-library的依赖。
  
 
-##在pod-project更改pod-library的代码
+## 在pod-project更改pod-library的代码
 
 下载完依赖库之后，打开`pod-project.xcworkspace`文件，会看到pods多了一个`development pods`的目录
 这个目录下有`pod-library`项目的代码以及资源。

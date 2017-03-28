@@ -11,7 +11,7 @@ Insert在之前的from表单提交中介绍的就是Insert操作。
 ```
 
 下面来说下其他的两个操作`Update`和`Delete`
-##增加Update和Delete的Button
+## 增加Update和Delete的Button
 先增加一个template名字叫做other_event,在这个模板中我们只展示3个objects，给每天object添加一个删除和更新的按钮。
 
 ```
@@ -32,7 +32,7 @@ Insert在之前的from表单提交中介绍的就是Insert操作。
 在之前的表中并没有updateAt这个字段，这里使用了mongodb（nosql）的一个优势，灵活可变的数据模式(scheme)，不需要变更表结构就可以随意的增加字段。
 之前没有updateAt数据的字段在{{updateAt}}这个位置会显示为"".
 
-##Update操作
+## Update操作
 
 ```
  Template.other_event.events({
@@ -50,7 +50,7 @@ Insert在之前的from表单提交中介绍的就是Insert操作。
 同样的我们可以打开两个浏览器，在其中的一个浏览器中点击更新按钮，在两个浏览器中都可以看到数据的更新。
    >css ,Fri Dec 18 2015 09:40:26 GMT+0800 (CST)
    
-   ##Delete操作
+   ## Delete操作
      ```
    Template.other_event.events({
         'click .delete': function () {

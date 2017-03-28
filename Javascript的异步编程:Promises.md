@@ -1,6 +1,6 @@
 Javascript的异步编程:Promise
 Promise对象是CommonJS工作组为异步编程提供的统一接口，是ECMAScript6中提供了对Promise的原生支持，Promise就是在未来发生的事情，使用Promise可以避免回调函数的层层嵌套，还提供了规范更加容易的对异步操作进行控制。提供了`reject`,`resolve`,`then`和`catch`等方法。
-##使用Promise
+## 使用Promise
 Promise是ES6之后原生的对象，我们只需要实例化Promise对象就可以直接使用。
 实例化Promise:
 ````
@@ -37,7 +37,7 @@ begin do something
  run failed
  reject from promise
 ```
-##使用Promise进行网络请求
+## 使用Promise进行网络请求
 ```
 getRequest = function (url) {
     var promise = new Promise(function (resolve, reject) {

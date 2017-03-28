@@ -1,7 +1,7 @@
 #beego自动化部署
 `beego`是Golang写的应用程序开源框架http://beego.me/，我使用`beego`写了一个项目小项目，golang是编译语言，需要编译之后再部署，每次部署到服务上是件很麻烦的事情。就写了一个自动打包部署到服务器的脚本，方便发布部署。
 
-##项目结构
+## 项目结构
 先看看beego项目的结构：
 ```
 beepkg
@@ -35,7 +35,7 @@ beepkg
 因为使用了文件存储的session，本地目录下会生成session的文件夹需要忽略打包`[0-9a-f]`,在打包的时候需要忽略这些文件。
 
 
-##打包脚本
+## 打包脚本
 打包beego项目，同步到服务端，需要做三件事情:
 	1.更新代码
 	2.编译可执行文件，打包资源
@@ -60,7 +60,7 @@ scp .tar.gz  jjz@192.168.1.10:/root/goapp/beepkg
 ssh jjz@192.168.1.10 'bash -s' < restart.sh
 ```
 
-##Supervisor
+## Supervisor
 服务器端可以使用`tar`命令解压文件,但是如何重启应用程序呢,在服务器端可以使用`Supervisor`管理beego进程，重启应用程序。
 `Supervisor`是一个*python*写的进程管理工具，用途就是有一个进程需要每时每刻不断的跑(web服务)，但是这个进程又有可能由于各种原因有可能中断。当进程中断的时候又希望能自动重启它，这个时候，我们就需要使用`Supervisor`，这里我们更多的是利用`Supervisor`的重启进程功能。
 
@@ -108,7 +108,7 @@ restart beepkg
 find / -name supervisor.sock
 unlink /tmp/supervisor.sock
 ```
-##最终脚本
+## 最终脚本
 解压文件并重启服务的脚本`restart.sh`:
 ```
 #! /bin/bash

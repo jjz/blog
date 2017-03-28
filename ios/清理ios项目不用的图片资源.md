@@ -19,7 +19,7 @@
 
 执行`bash`命令，可以通过`os.popen('echo $PATH').read()`读取执行的结果。 也可以直接执行`bash`命令,例如: >os.system('rm -rf dir')
 
-需要用到的`bash`命令是`ag "image" './'`和`rm -rf './'`,后者用来删除文件夹。 ##查找不使用的`imageset`资源
+需要用到的`bash`命令是`ag "image" './'`和`rm -rf './'`,后者用来删除文件夹。 ## 查找不使用的`imageset`资源
 
 ```
 path = 'ios'

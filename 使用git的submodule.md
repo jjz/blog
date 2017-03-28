@@ -1,5 +1,5 @@
 #使用Git Submodule管理子模块
-##使用场景
+## 使用场景
 基于公司的项目会越来越多，常常需要提取一个公共的类库提供给多个项目使用，但是这个`library`怎么和`git`在一起方便管理呢？
 我们需要解决下面几个问题：
 
@@ -10,11 +10,11 @@
 
 解决以上问题，可以考虑使用git的 `Submodule`来解决。
 
-##什么是Submodule?
+## 什么是Submodule?
 `git Submodule` 是一个很好的多项目使用共同类库的工具，他允许类库项目做为`repository`,子项目做为一个单独的`git项目`存在父项目中，子项目可以有自己的独立的`commit`，`push`，`pull`。而父项目以`Submodule`的形式包含子项目，父项目可以指定子项目`header`，父项目中会的提交信息包含`Submodule`的信息，再`clone父项目`的时候可以把`Submodule`初始化。
 
 
-##在项目中使用Submodule
+## 在项目中使用Submodule
 使用`git`命令可以直接添加`Submodule`：
 > git submodule add git@github.com:jjz/pod-library.git pod-library
 
@@ -50,7 +50,7 @@ git add .gitmodules pod-ibrary
 git commit -m "pod-library submodule"
 git submodule init
 ```
-##修改Submodule
+## 修改Submodule
 
 **首先需要确认有对Submodule的commit权限**。
 进入`Submodule`目录里面:
@@ -86,7 +86,7 @@ Subproject commit 330417cf3fc1d2c42092b20506b0d296d90d0b5f
 
 这样就把子模块的变更信息以及子模块的变更信息提交到远程服务器了，从远程服务器上更新下来的内容就是最新提交的内容了。
 
-##更新Submodule
+## 更新Submodule
 更新`Submodule`有两种方式:
  在父项目的目录下直接运行
 >git submodule foreach git pull
@@ -97,7 +97,7 @@ Subproject commit 330417cf3fc1d2c42092b20506b0d296d90d0b5f
 
 可以看到在`Submodule`的目录中,使用`git`和单独的一个项目是一样的,注意更新`Submodule`的时候如果有新的`commit id`产生，需要在父项目产生一个新的提交，pod-libray文件中的 `Subproject commit`会变为最新的`commit id`。
 
-##clone Submodule
+## clone Submodule
 `clone Submodule`有两种方式 一种是采用递归的方式clone整个项目，一种是clone父项目，再更新子项目。
 1. 采用递归参数 `--recursive`
 > git clone git@github.com:jjz/pod-project.git --recursive
@@ -149,7 +149,7 @@ git submodule init
     Checking connectivity... done.
     Submodule path 'pod-library': checked out '330417cf3fc1d2c42092b20506b0d296d90d0b5f'
 ```
-##删除Submodule
+## 删除Submodule
 `git` 并不支持直接删除`Submodule`需要手动删除对应的文件:
 > cd pod-project
     git rm --cached pod-library

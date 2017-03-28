@@ -4,7 +4,7 @@
 
 Jenkins用来做项目的持续集成，如果使用了Git Submodule,每次Jenkins更新版本库的时候还需要更新submodule的内容。
 
-##设置项目更新submodule
+## 设置项目更新submodule
 在项目的设置 -> 源码管理 -> git中，添加一个`Additional Behaviours`：
 ![图片描述][1]
 
@@ -39,14 +39,14 @@ fatal: clone of '....' into submodule path '....' failed
 Finished: FAILURE
 ```
 
-##Git Submodule的身份认证
+## Git Submodule的身份认证
 上面错误产生的原因git submodule使用的是ssh方式管理repository,没有找到可以使用的`ssh key`做submodule的身份认证。
 这个问题已经在Jenkins的官网上提了个**issue**[https://issues.jenkins-ci.org/browse/JENKINS-20941](https://issues.jenkins-ci.org/browse/JENKINS-20941)。
 目前解决这个问题的正式版本还没有发布，只能使用beta的插件解决这个问题，需要两个插件：
 	1.git 2.5.0-beta5
 	2.git-client 1.20.0-beta3
 
-##Jenkins插件升级
+## Jenkins插件升级
 在系统管理中，可以找到插件管理:
 ![图片描述][2]
 
@@ -57,7 +57,7 @@ Finished: FAILURE
 ```
 http://mirror.xmission.com/jenkins/updates/experimental/update-center.json
 ```
-##使用统一的身份验证
+## 使用统一的身份验证
 插件更新完成之后，回到项目配置中git的设置，会多出一个选项:
 ![图片描述][3]
 

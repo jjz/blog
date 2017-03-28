@@ -4,7 +4,7 @@ Android上的开发对于安全的需求越来越高，虽然OpenSSL出现过几
 OpenSSL是一个基于c开发的，古老的，开源的加密库，想在Android上使用OpenSSL必须要借助NDK,使用NDK编译成Android上面的动态连接库(或者静态链接库)，再借助JNI层的封装，提供给Java层调用。
 这篇文章主要写的是如何构建Android的OpenSSL类库。参考OpenSSL的官方文档：https://wiki.openssl.org/index.php/Android
 
-##前期准备
+## 前期准备
 * OpenSSL的源代码
 * setenv-adnroid.sh 构建脚本
 * Make
@@ -24,7 +24,7 @@ setenv-android.sh脚本地址：https://wiki.openssl.org/images/7/70/Setenv-andr
 安装`makedepend`
 >brew install makedepend
 
-##运行脚本
+## 运行脚本
 脚本下载完成之后是不能直接运行的，原因在于脚本里面的变量并没有配置，需要配置的变量:
 ```
 ANDROID_NDK_ROOT:
@@ -48,7 +48,7 @@ _ANDROID_EABI="arm-linux-androideabi-4.9"
 
 没有`Error`出现就是配置正确了。
 
-##编译OpenSSL
+## 编译OpenSSL
 
 上面的配置会设置成环境变量
 例如：
@@ -78,7 +78,7 @@ WARNING! If you wish to build 64-bit library, then you have to
 >echo $ANDROID_API
 
 发现这个变量没有配置成功，上面的环境变量的配置（Setenv-android.sh）在我的电脑上面并没有起作用。
-##优化脚本
+## 优化脚本
 根据OpenSSL在wiki中提到的脚本(Setenv-android.sh)，尝试下打印`$ANROID_API`的值。
 在脚本里面更新打印内容：
 >echo "ANDROID_API: `echo $ANDROID_API`"

@@ -13,7 +13,7 @@ Flex布局的特点:
 * 沿着容器对齐 
 
 微信小程序实现了`Flex`布局,简单介绍下`Flex`布局在微信小程序中的使用。
-##伸缩容器
+## 伸缩容器
 设有`display:flex`或者`display:block`的元素就是一个`flex container`(伸缩容器)，里面的子元素称为`flex item`(伸缩项目)，`flex container`中子元素都是使用`Flex`布局排版。
 
 * `display:block` 指定为块内容器模式，总是使用新行开始显示，微信小程序的视图容器(view,scroll-view和swiper)默认都是`dispaly:block`。
@@ -35,7 +35,7 @@ Flex布局的特点:
 
 可以从效果图看到`block`和`flex`的区别，子元素`view`是在换行显示(`block`)还是行内显示(`flex`)。
 
-##主轴和侧轴
+## 主轴和侧轴
 `Flex`布局的伸缩容器可以使用任何方向进行布局。
 容器默认有两个轴：*主轴(main axis)*和*侧轴(cross axis)*。
 主轴的开始位置为`主轴起点`(main start)，主轴的结束位置为`主轴终点`(main end),而主轴的长度为`主轴长度`(main size)。
@@ -72,7 +72,7 @@ Flex布局的特点:
 
 ![flex-direction](http://upload-images.jianshu.io/upload_images/22188-1bdb989fea46fdc1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##对齐方式
+## 对齐方式
 子元素有两种对齐方式：
 > `justify-conent` 定义子元素在主轴上面的对齐方式
 > `align-items` 定义子元素在侧轴上对齐的方式

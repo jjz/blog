@@ -2,7 +2,7 @@
 Docker引擎是基于Linux内核特性的开源应用容器。让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，发布到任何流行的Linux容器上，实现虚拟化，容器运行在类似与iphone的沙盒中。
 在MacOs上面运行Docker先安装`Docker Toolbox`。
 
-##Docker Toolbox
+## Docker Toolbox
 Docker Toolbox是获取以及运行Docker生产环境最快捷的方式，他包括：
     1.Docker Machine 
     2.Docker
@@ -12,7 +12,7 @@ Docker Toolbox是获取以及运行Docker生产环境最快捷的方式，他包
     6.VirtualBox
 因为Docker是以及Linux内核的，所以不能直接在OS X上面运行，因此我们需要VirtualBox，因为一个虚拟的Docker环境。
 环境要求：OS X 10.8以上的，才能安装运行`Docker Toolbox`。
-##安装
+## 安装
 下载地址：https://www.docker.com/products/docker-toolbox
 下载之后双击安装文件开始安装。
 
@@ -28,7 +28,7 @@ Docker Toolbox是获取以及运行Docker生产环境最快捷的方式，他包
 最后会安装两个快速启动的工具:
 ![图片描述][4]
 
-##hello world 
+## hello world 
 双击Application的`Docker Quickstart Terminal`:
 ![图片描述][5]
 选择一个常用的终端,我选择的是iTerm。
@@ -36,9 +36,9 @@ Docker Toolbox是获取以及运行Docker生产环境最快捷的方式，他包
 ```
 
 
-                        ##         .
-                  ## ## ##        ==
-               ## ## ## ## ##    ===
+                        ##          .
+                  ##  ##  ##         ==
+               ##  ##  ##  ##  ##     ===
            /"""""""""""""""""\___/ ===
       ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
            \______ o           __/

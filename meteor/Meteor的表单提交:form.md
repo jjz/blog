@@ -1,5 +1,5 @@
 # Meteor的表单提交:form
-##Meteor中的form
+## Meteor中的form
 在web中时时刻刻都不能离开form，表单提交,来看看在meteor里面如何提交表单吧！
 首先是 HTML:
 
@@ -32,7 +32,7 @@
 ```
 
 这里我们定义了一个表单，class为new-lanuage，有一个text的 input还有一个提交的按钮。下面的模板`meteor_collection`是用来显示的。
-##给表单添加事件
+## 给表单添加事件
 
 ```
 if (Meteor.isClient) {
@@ -63,7 +63,7 @@ if (Meteor.isClient) {
 
 ![图片描述][1]
 
-##对结果排序
+## 对结果排序
 在插入的时候，多加了一个字段createdAt，我们可以按照时间的倒序对 languages进行排序：
  >languages: Languages.find({}
     , {sort: {createdAt: -1}})

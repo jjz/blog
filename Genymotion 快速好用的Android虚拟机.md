@@ -1,5 +1,5 @@
 # Genymotion 快速好用的Android虚拟机
-##什么是Genymotion
+## 什么是Genymotion
 `Genynotion`不是普通的模拟器，它是`虚拟机`,能够提供更好的`Android模拟体验`。
 它的好处:
 * 快速，流畅
@@ -12,7 +12,7 @@
 * 支持在多个系统上面安装
 ...
 
-##安装Genymotion
+## 安装Genymotion
 要安装`Genymotion`，必须安装`VirtualBox`，`Virtualbox`是Genymotion的必备组建,是一款开源的虚拟软件，以前是Sun 开发，现在属于Oracle公司，`Virtualbox`基于操作系统底层的虚拟机，免费而且开源。
 下载地址：
 [https://www.virtualbox.org/](https://www.virtualbox.org/)

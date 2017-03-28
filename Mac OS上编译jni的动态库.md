@@ -1,6 +1,6 @@
 #Mac OS上编译JNI的动态库
 
-**JNI**是`Java Native Interface`的缩写，是为了在Java上能够调用本地语言尤其是`C`和`c++`设计的。 下面就看下如何在`Mac OS`上面如何使用`JNI`的调用C语言。 ##编写Java类 先定义一个`Java`类
+**JNI**是`Java Native Interface`的缩写，是为了在Java上能够调用本地语言尤其是`C`和`c++`设计的。 下面就看下如何在`Mac OS`上面如何使用`JNI`的调用C语言。 ## 编写Java类 先定义一个`Java`类
 
 ```
 public class MacJni {
@@ -21,9 +21,9 @@ public class MacJni {
 
 这里定义了一个`MacJni`的类，在它的main函数中调用了定义的`native`的方法**sayHello**。 在*static*中加载`native`的类库`macjni`,注意JNI的动态库在linux上面的命名是`.so`文件，而在`Mac OS`上面的命名是`.jnilib`,类库的名字需要加上lib,也就是在`Mac OS`上面动态库的名称应该是*libmacjni.jnilib*
 
-##生成.class 通过命令生成`.class`文件: >javac MacJni.java
+## 生成.class 通过命令生成`.class`文件: >javac MacJni.java
 
-这样就可以生成了一个`MacJni.class`的文件。 ##生成.h文件 通过命令可以直接生成`.class`对应`.h`文件: >javah MacJni
+这样就可以生成了一个`MacJni.class`的文件。 ## 生成.h文件 通过命令可以直接生成`.class`对应`.h`文件: >javah MacJni
 
 生成了一个`MacJni.h`的文件。文件内容如下:
 
@@ -51,7 +51,7 @@ JNIEXPORT void JNICALL Java_MacJni_sayHello
 
 该文件定义了一个方法`Java_MacJni_sayHello`,这个方法对应定义的native方法`public native void sayHello();`。 JNI在`C语言`中定义的规则是:`Java_包名_类名_方法名`
 
-##编写.c文件 根据定义`.h`方法，需要编写一个一个.c文件*MacJni.c*，用来实现`.h`中的方法
+## 编写.c文件 根据定义`.h`方法，需要编写一个一个.c文件*MacJni.c*，用来实现`.h`中的方法
 
 ```
 #include <stdio.h>
@@ -62,7 +62,7 @@ JNIEXPORT void Java_MacJni_sayHello(JNIEnv * env, jobject obj){
 }
 ```
 
-这个方法很简单就是打印一句话:`hello from jni`。 ##编译.c 在`MacJni.h`中有一句话 > `#include <jni.h>`
+这个方法很简单就是打印一句话:`hello from jni`。 ## 编译.c 在`MacJni.h`中有一句话 > `#include <jni.h>`
 
 `jni.h`是jdk中C语言库的头文件，在编译.c的时候需要指定jni.h的所在。在Mac OX中他所在的位置是：
 
@@ -70,7 +70,7 @@ JNIEXPORT void Java_MacJni_sayHello(JNIEnv * env, jobject obj){
 
 使用`gcc`编译： > gcc -I/System/Library/Frameworks/JavaVM.framework/Headers -c MacJni.c
 
-就可以得到一个编译好的文件`MacJni.o`,下面需要把`.o文件`打包成`动态库`。 ##打包动态库 使用`gcc`可以直接打包动态库 >gcc -dynamiclib -o libmacjni.jnilib MacJni.o
+就可以得到一个编译好的文件`MacJni.o`,下面需要把`.o文件`打包成`动态库`。 ## 打包动态库 使用`gcc`可以直接打包动态库 >gcc -dynamiclib -o libmacjni.jnilib MacJni.o
 
 把.o文件打包成了`libmacjni.jnilib`,就可以通过Java调用C语言了。
 

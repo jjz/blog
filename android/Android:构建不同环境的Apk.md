@@ -39,7 +39,7 @@
 
 通过`gradle`可以解决上面的三个问题。
 
-##buildConfigField`buildConfigField`是gradle的一个方法，他的作用是可以给BuildConfig添加变量，赋值等。他的使用方式: >buildConfigField("int", "ENV_SETTING", "0")
+## buildConfigField`buildConfigField`是gradle的一个方法，他的作用是可以给BuildConfig添加变量，赋值等。他的使用方式: >buildConfigField("int", "ENV_SETTING", "0")
 
 这样就给BuildConfig中新增加了一个属性`EN_SETTING`:
 
@@ -59,7 +59,7 @@
 
 `buildConfigField`通过`BuildConfig`类可以做到,把`gradle`里的配置传递给Java代码。
 
-##buildTypes 虽然通过`gradle`中可以配置`ENV_SETTING`变量，通过`buildConfigField`可以让java代码获取到设置的值。但是在buildTypes中我们只能设置两个变量:
+## buildTypes 虽然通过`gradle`中可以配置`ENV_SETTING`变量，通过`buildConfigField`可以让java代码获取到设置的值。但是在buildTypes中我们只能设置两个变量:
 
 ```
 buildTypes {
@@ -94,7 +94,7 @@ buildTypes {
     }
 ```
 
-新增加`buildTypes`叫做`releaseTest`(注意不能使用test开头)。 它继承了`buildTypes.release`的配置，可以通过`buildConfigField`给**releaseTest**里变量重新赋值，它会覆盖`buildTypes.release`的配置。 这样就有了三种不通的build配置。 ##assmble\* gradle通过assmble*命令可以打包不同`buildTypes`的APK，在右侧的gradle工具栏里面的build菜单栏里面可以看到三种不同的assemble:
+新增加`buildTypes`叫做`releaseTest`(注意不能使用test开头)。 它继承了`buildTypes.release`的配置，可以通过`buildConfigField`给**releaseTest**里变量重新赋值，它会覆盖`buildTypes.release`的配置。 这样就有了三种不通的build配置。 ## assmble\* gradle通过assmble*命令可以打包不同`buildTypes`的APK，在右侧的gradle工具栏里面的build菜单栏里面可以看到三种不同的assemble:
 
 ```
 assembleDebug

@@ -1,5 +1,5 @@
 # Meteor是什么
-## Meteor是什么
+##  Meteor是什么
 `Meteor`是一种最新的`JavaScript`框架，用于自动化和简化实时运行的Web应用程序的开发，它使用分布式数据协议-`(Distributed Data Protocol,DDP)`的协议来处理实时通信，使用支持`WebSocket`的浏览器以及使用`Asynchronous JavaScript +XML(Ajax)`长轮询的旧浏览器支持这种协议，浏览器到服务器的通信是透明的。
 
 `Meteor`提供了两个`MongoDB`数据库：一个客户端缓存库和服务器上的一个`MongoDB`数据库。当一个用户更改数据时，在浏览器中运行的`JavaScript`代码会更新本地的`MongoDB`中的相应的数据库项，然后向服务器发出一个`DDP`请求。
@@ -9,7 +9,7 @@
 `Meteor`网站地址:[https://www.meteor.com/](https://www.meteor.com/)
 
 
-##安装Meteor
+## 安装Meteor
 运行命令：
 
 >curl https://install.meteor.com/ | sh
@@ -30,7 +30,7 @@
       docs.meteor.com
 ```
   
-##新建Meteor项目
+## 新建Meteor项目
 使用`meteor create`可以创建一个新项目:
   >meteor create test-meteor
   

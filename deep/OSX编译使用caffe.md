@@ -7,7 +7,7 @@
 4.  开源，开放
 
 `Caffe`在MacOS可以使用`Homebrew`安装，也是自行编译源代码安装，这里介绍下直接编译源代码安装.
-##下载Caffe源代码
+## 下载Caffe源代码
 `Caffe`的github地址：[https://github.com/BVLC/caffe](https://github.com/BVLC/caffe)，直接克隆Caffe源代码:
 >git clone git@github.com:BVLC/caffe.git
 
@@ -16,7 +16,7 @@
 >cp Makefile.config.example Makefile.config
 
 `Makefile.config`文件中有些编译选项需要做更改才能在MacOS上面编译通过，后面会介绍,下面先介绍下编译Caff所需要的依赖。
-##安装Caffe依赖
+## 安装Caffe依赖
 编译`Caffe`需要有大量的依赖,开始扁你之前，需要先安装这些依赖。
 (1)  使用GPU模式需要安装CUDA,安装CUDA的命令：
 >brew cask install cuda
@@ -49,7 +49,7 @@
 > brew install gflags
 > brew install snappy
 
-##安装caffe-python依赖
+## 安装caffe-python依赖
 先要安装 Python依赖库：numpy,h5py以及scikit-image
 >brew install numpy
 >pip install h5py
@@ -67,7 +67,7 @@
 
 
 
-##编译Caffe
+## 编译Caffe
 使用`make`命令编译Caffe: 
 >make clean
 >make all 
@@ -83,7 +83,7 @@
 `bash`的设置命令：
 >export PYTHONPATH=path/to/caffe/python:$PYTHONPATH
 
-##使用Caffe
+## 使用Caffe
 在命令行中直接测试`Caffe`是否编译成功。
 >python
 >import caffe

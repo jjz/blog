@@ -3,7 +3,7 @@
 >sudo apt-get install openssh-server
 
 
-##生成私钥/公钥对
+## 生成私钥/公钥对
 使用命令`ssh-kengen`可以生成私钥/公钥对，私钥/公钥对的生成算法有两种RSA和DSA。
 >RSA是非对称加密算法，可以用来加密和签名
 >DSA(Digital Signature Algorithm)只可以用来数字签名的算法
@@ -37,7 +37,7 @@
      +----[SHA256]-----+
 其中`-b`的参数是用来设置私钥的长度1024的长度已经可以满足我们对于安全的需求了,不输入任何文件名会在`.ssh`目录下得到两个文件:`id_rsa`和`id_rsa.pub`。
 
-##上传公钥到对应的服务器
+## 上传公钥到对应的服务器
 使用命令`ssh-copy-id`可以将认证文件加载到对应的服务器上：
 >ssh-copy-id -i ~/.ssh/id_rsa.pub <username>@<host>
 
@@ -51,7 +51,7 @@
 
 这里会要求我们输入远程服务器的密码。
 
-##修改服务器的ssh配置文件
+## 修改服务器的ssh配置文件
 `ssh-server`配置文件位于:`/etc/ssh/sshd_config`中,需要设置`ssh-server`允许使用私钥/公钥对的方式登录，打开配置文件:
 >vim /etc/ssh/sshd_config
 
@@ -66,7 +66,7 @@
 
 设置完成之后就可以使用命令`ssh <username>@<host>`直接登录服务器了，不需要再输入密码了。
 
-##其他
+## 其他
 
 1.  如果公钥丢失的情况，可以使用私钥再次生成公钥,使用私钥生成公钥的命令：
 

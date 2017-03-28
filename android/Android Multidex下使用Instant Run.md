@@ -6,7 +6,7 @@ Instant Run is disabled: Instant Run does not support deploying build variants w
 ```
 大意是开启了`multidex`，SDK的最低版本要是21才能使用`Instant Run`。为什么会有这个问题出现呢？
 
-##Multidex
+## Multidex
 Android的Apk文件代码部分会代码成`Dalvik Exexutable`(DEX)文件，而每个DEX文件都是有方法数的限制的，不能超过65536个方法，包括使用的类库，和自己写的代码的方法数，65536又是64k，这个限制又称为64k限制，怎么解决这个解决这个限制。
 	1.减少方法数
 	2.使用多个DEX文件
@@ -54,11 +54,11 @@ dependencies {
 ```
 很遗憾的的是我们的APK依赖的库比较多，没有办法减少方法数到64K以下，错误提示里面说最小的SDK大于21（Android 5.0）以上是可以的，我们Android 5.0会不一样的呢？
 
-##ART
+## ART
 Android runtime(ART)是管理runtime和系统服务的技术，ART和Dalvik能够从DEX的二进程文件中运行，ART天然地支持multiple DEX文件，ART在安装应用的时候扫描所有的DEX文件，编译成一个单独的.oat文件提供Android设备运行。更多的内容可以看:[ART](https://source.android.com/devices/tech/dalvik/index.html)
 
 一方面想使用`Instant Run`的强大功能，另一方便又不能放弃4.0的Android设备。有没有一种能够两者兼具呢？
-##Build Variant
+## Build Variant
 不能每次调试的都去更新minSdkVersion,这样一是不方便，另外是容易出错，容易把错误的代码提交到版本库，导致不必要的错误出现，有没有一种方式能够通过配置构建出不同的环境，马上就能到gradle。
 `productFlavors`是gradle中的一个功能，能够根据不通的定义构建不通的APK,比如构建不同渠道的渠道包，一般`productFlavors`的DSL是这样的:
 ```

@@ -3,7 +3,7 @@
 在ListView中有的时候会需要在头部和底部的位置需要展示一些固定的View,这个时候就需要使用AddHeaderView()和AddFooterView()方法。
 在ListView中有一个方法叫做AddHeaderView(),作用是在ListView的头部中添加布局。对应的还有addFooterView()方法，在ListView的底部添加布局。
 介绍下addHeaderView()的使用。
-##在setAdapter之前还是之后
+## 在setAdapter之前还是之后
 addHeaderView是放在setAdapter之前还是之后呢？
 先看下addHeaderView的源代码：
 ```

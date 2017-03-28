@@ -6,7 +6,7 @@ OpenCV（Open Source Computer Vision Library）是一个基于开源发行的跨
 * 更多指令优化集
 
 在MacOS Sierra上安装了下OpenCV 3。
-##前期准备
+## 前期准备
 需要先安装cmake:
 >brew install cmake
 
@@ -14,7 +14,7 @@ OpenCV（Open Source Computer Vision Library）是一个基于开源发行的跨
 >git tag 3.1.0
 
 也可以选择使用Homebrew安装，这样比较方便的解决安装依赖的问题，这里以使用Homebrew安装为例。
-##安装
+## 安装
 安装命令:
 >brew opencv3
 
@@ -48,7 +48,7 @@ READ THIS: https://git.io/brew-troubleshooting
 >brew -v install --with-contrib  --with-ffmpeg --with-gphoto2 --with-gstreamer --with-java --with-libdc1394 --with-opengl --with-openni2 --with-python3 --with-qt5 --with-tbb --with-vtk --HEAD opencv3
 
 OpenCV可以单独使用，也可以和`CUDA`混合使用。
-##CUDA
+## CUDA
 CUDA（Compute Unified Device Architecture）是`NVIDIA`推出的运算平台，是一种并行计算架构,该架构使GPU能够解决复杂的计算问题,如果我们想使用CUDA和OpenCV混合编程，需要使用CUDA重新编译OpenCV：
 >brew -v --with-cuda install --HEAD opencv3
 

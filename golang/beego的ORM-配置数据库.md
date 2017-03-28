@@ -2,7 +2,7 @@
 `Object Relational Mapping `,简称ORM，用于实现面向对象编程语言里不通类型系统的数据之间的转换。从效果上说，它其实是创建了一个可在编程语言里使用的“虚拟对象数据库”。
 `beego`是谢大神开发的一个快速开发Go应用的Http框架，一个RESTful的框架。
 记录下如何在beego中配置数据库，以`MySql`为例
-##数据库选择
+## 数据库选择
 目前beego的ORM支持三种数据库:
 	1.Sqlite
 	2.PostgreSql
@@ -17,7 +17,7 @@ import (
 )
 ```
 
-##数据库注册
+## 数据库注册
 >orm.RegisterDriver("mysql", orm.DRMySQL)
 
 
@@ -34,7 +34,7 @@ orm.DRSqlite
 orm.DRPostgres
 ```
 
-##数据库连接
+## 数据库连接
 beego必须注册一个别名为`default`的数据库，作为默认使用。
 >orm.RegisterDataBase("default", "mysql", "test:123456@/test?charset=utf8",30,30)
 
@@ -50,7 +50,7 @@ beego必须注册一个别名为`default`的数据库，作为默认使用。
 
 第四个参数和第五个参数也可以不传值，会使用数据库默认值：
 
-##时区
+## 时区
 曾经我遇到过一个项目，数据库的时区设置的ORM的时区不一致，导致后面的开发会复杂很多。beego中会使用`DefaultTimeLoc`来保证时间不会出错
 beego默认使用`time.Local`本地时区，可以用来自动创建时间，从数据中取出时间转换。
 >orm.DefaultTimeLoc = time.UTC

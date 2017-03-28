@@ -1,23 +1,23 @@
 #react-native
-##环境搭建
-##导航
-##动画
-##listView
-##网络请求
-##本地存储
-##样式
-##布局
-##native相互调用
-##差异化布局
-##资源
-##ec6(class,export,module)
-##debugging
-##Testing与质量检查
-##工具
-##升级
-##环境变量
-##通知
-##多线程
-##发布
-##crash
+## 环境搭建
+## 导航
+## 动画
+## listView
+## 网络请求
+## 本地存储
+## 样式
+## 布局
+## native相互调用
+## 差异化布局
+## 资源
+## ec6(class,export,module)
+## debugging
+## Testing与质量检查
+## 工具
+## 升级
+## 环境变量
+## 通知
+## 多线程
+## 发布
+## crash
 

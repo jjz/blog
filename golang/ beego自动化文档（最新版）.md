@@ -1,5 +1,5 @@
 之前写过一篇使用Beego自动化api文档的文章：[Beego自动化文档](http://www.jianshu.com/p/0d375f4b36b2),随着Beego的更新，1.7.0之后Beego自动化文档的方法也有了更新，最显著的更新是去掉了`docs.go`，使用了`swagger.json`,更加的符合swagger的特点。这篇文章是上一篇文章的修正和补充。
-##环境要求
+## 环境要求
 需要安装最新的Go语言环境，安装Go可以参考[Golang在Mac OS上的环境配置](http://www.jianshu.com/p/943870134593),还需要安装最新的Beego框架。如果是你的Beego框架还是旧版本的就需要升级Beego:
 >go get -u github.com/astaxie/beego
 >go get -u github.com/beego/bee
@@ -25,7 +25,7 @@
 └── Date      : Saturday, 26 Nov 2016
 ```
 可以从该命令中看到Go的环境配置，Beego的版本等信息。
-##文档的生成
+## 文档的生成
 在`conf/app.conf`中设置`EnableDocs=true`之后，仍然可以通过命令生成文档:
 >bee generate docs
 
@@ -39,7 +39,7 @@ swagger.yml
 >bee run -gendoc=true
 
 这样可以在每次项目重新运行的时候更新api文档，不用重新运行命令:`bee generate docs`。
-##API文档的访问
+## API文档的访问
 更新`swagger-ui`是一件很麻烦的事情，所以在beego的运行命令中加入一个参数`-downdoc=true`:
 >bee run -downdoc=true
 
@@ -54,7 +54,7 @@ swagger.yml
 
 ![swagger文档](http://upload-images.jianshu.io/upload_images/22188-a22360ab04107fca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##路由解析与注解
+## 路由解析与注解
 路由解析仍然使用的是`namespace+Include`：
 ```
 ns := beego.NewNamespace("/v1",
@@ -87,7 +87,7 @@ func (u *UserController) Post() {
 	u.ServeJSON()
 }
 ```
-##总结
+## 总结
 新版本的beego中对于swagger的支持更加的友好，也更加的swagger化了，采用了`swagger.json`和`swagger.yml`文件，不需要重新生成一个新的router文件了，这样文档部分的代码更加的分离，使用`swagger.yml`可以更方便的生成访问api的其他语言的代码。
 
 源代码地址：[https://github.com/jjz/go/tree/master/autodoc](https://github.com/jjz/go/tree/master/autodoc)

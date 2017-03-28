@@ -1,7 +1,7 @@
 [安装Meteor](http://www.jianshu.com/p/183185d2b9b1)，就可以直接构建应用了，`Meteor`可以直接Android，IOS应用，桌面应用以及Web应用。
 先从构建Android应用开始.
 
-##安装Android SDK
+## 安装Android SDK
 直接安装`Meteor`上面的`Android SDK`.
 >meteor install-sdk android
 
@@ -17,7 +17,7 @@
     ✓ Android emulator acceleration is installed
 ```
 
-##添加对Android的支持
+## 添加对Android的支持
 在原有的应用上面直接添加对于`Android`的支持。
 >meteor add-platform android
 
@@ -27,7 +27,7 @@ android: added platform
 ```
 该项目现在已经支持Android 平台了
 
-##在Android上运行Meteor
+## 在Android上运行Meteor
 
 >meteor run android 
 

@@ -1,7 +1,7 @@
 #Android Studio NDK开发-JNI调用java函数
 相对于NDK来说SDK里面有更多API可以调用，有的时候我们在做NDK开发的时候，需要在JNI直接调用Java中的函数，比如callback,系统信息等....
 了解如何在JNI中调用Java方法，需要先了解`FindClass`和`GetMethodID`。
-##FindClass和GetMethodID
+## FindClass和GetMethodID
 
 在JNI中可以通过`FindClass`可以找到类，得到jclass，比如：
 >jclass clz=(*env)->FindClass(env，"com/jjz/JniHandle");
@@ -15,7 +15,7 @@
 通过FindeClass可以找到JNI需要调用的类，Get*MethodID可以找到对应的方法，这样就可以在JNI中调用Java的方法了。
 在Get*MethodID中，第四个参数是`()V`,这个是方法签名。
 
-##方法签名
+## 方法签名
 在`Get*MethodID`的使用中，其中的第四个参数`()V`就是方法签名，因为java是支持重载的，所以需要标明函数的传参和返回值，就是方法的签名，用来保证方法的唯一。其中`()`代表不传参数，`V`代表返回值为void。
 方法签名对于Java的参数都有一一对应的值。
 方法签名中用大写的字母对应了java的基本数据类型:
@@ -65,7 +65,7 @@ public class com.jjz.JniHandle {
 }
 ```
 
-##静态函数的调用
+## 静态函数的调用
 调用类的静态方法，首先要得到类的引用，再调用类的静态方法。
 首先定义一个类和他的静态方法提供给JNI调用:
 
@@ -107,7 +107,7 @@ Java_com_jjz_NativeUtil_callJavaStaticMethodFromJni(JNIEnv *env, jclass type) {
 ```
 这里需要定义了一个`native`方法`com.jjz.NativeUtil.callJavaStaticMethodFromJni`,调用该方法可以在logcat中看到结果。
 
-##非静态函数的调用
+## 非静态函数的调用
 调用非静态函数要复杂一些：
 
 1. 通过findClass找到类

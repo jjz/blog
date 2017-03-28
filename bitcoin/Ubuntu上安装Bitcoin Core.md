@@ -2,11 +2,11 @@
 
 在Ubuntu上安装Bitcoin Core除了在[官网](https://bitcoin.org/en/download)上面直接下载安装包之外，还可以使用PPA的方式安装。
 
-##PPA 
+## PPA 
 PPA:Personal Package Archives ,在Ubuntu上允许编译和发布一个apt repository。Bitcoin团队维护了一个apt repository ，地址:
 [https://launchpad.net/~bitcoin/+archive/ubuntu/bitcoin](https://launchpad.net/~bitcoin/+archive/ubuntu/bitcoin)。 使用PPA的好处可以使用`shell`直接安装，自动解决依赖，还可以选择性的安装`bitcoind`和`bitcoin-qt`。
 
-##安装Bitcoin Core 
+## 安装Bitcoin Core 
 首先需要添加bitcoin的源:
 >sudo add-apt-repository ppa:bitcoin/bitcoin
 
@@ -28,7 +28,7 @@ OK
 可以选择性的安装`bitcoin-qt`,在`ubuntu-service`版本上是不需要`bitcoin-qt`的，如果是在`ubuntu-desktop`上面想使用`bitcoin-qt`的话可以选择安装:
 >sudo apt-get install bitcoin-qt
 
-##运行bitcoind
+## 运行bitcoind
 直接输入`bitcoind`命令可以让`bitcoind`在前台直接运行:
 >bitcoind
 
@@ -64,7 +64,7 @@ OK
 使用`tail`命令：
 >tail -f debug.log
 
-##区块链数据
+## 区块链数据
 在Linux中bitcoind的数据存在`$HOME/.bitcoin`目录下,该目录下有以下的文件。
 
 * `bitcoind.pid` bitcoind运行的进程文件

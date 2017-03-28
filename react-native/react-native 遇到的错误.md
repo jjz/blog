@@ -1,9 +1,9 @@
 #react-native 遇到的错误
 记录下在react-native开发中遇到的错误
 
-##ReferenceError: Can't find variable: __fbBatchedBridge...
+## ReferenceError: Can't find variable: __fbBatchedBridge...
 react-native启动用来做JavaScript的代码的服务，是本地的服务，App默认访问的host地址是`localhost`,运行到真实的设备上面的时候无法访问react-native服务,因此会出现上面的错误。
-#####Android解决方案:
+## ## #Android解决方案:
 1. 对adb的server设置反向代理
 >adb reverse tcp:8081 tcp:8081
 
@@ -15,7 +15,7 @@ react-native启动用来做JavaScript的代码的服务，是本地的服务，A
 
 在`dev setting`里面即可设置。
    
-##### ios解决方案:
+## ## # ios解决方案:
  在`AppDelegate.m`中修改`jsCodeLocation`：
  ```
  .....
@@ -25,7 +25,7 @@ react-native启动用来做JavaScript的代码的服务，是本地的服务，A
 
  
 
-##react-native start 错误
+## react-native start 错误
 错误信息：
 ```
 ERROR: Unknown option --no-pretty

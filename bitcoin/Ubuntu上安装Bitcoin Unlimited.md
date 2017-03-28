@@ -1,5 +1,5 @@
 以前写过一篇[Ubuntu上安装Bitcoin Core](http://www.jianshu.com/p/3767b20856c6)的文章,当前比特币扩容之争还在继续，今天决定把Ubuntu上面的`Bitcoin Core`换成`Bitcoin Unlimited`。下面对安装`Bitcoin Unlimited`的过程做个总结。
-##安装前准备
+## 安装前准备
 安装前需要先备份好数据。
 
 * 备份好你们的钱包，备份好你的私钥
@@ -12,7 +12,7 @@
 >bitcoin-cli stop
 
 备份好数据以及停止了`bitcoind`,下一步需要移除`Bitcoin Core`。
-##移除Bitcoin Core
+## 移除Bitcoin Core
 之前有安装Core或者Classic的，需要先移除他们，`Bitcoin Unlimited`也是使用的`bitcoind`，不移除就无法正确安装。
 删除客户端:
 >sudo apt-get remove bitcoin*
@@ -25,7 +25,7 @@
 > sudo make uninstall
 
 移除`Bitcoin Core`之后就可以安装`Bitcoin Unlimited`了。
-##PPA安装Bitcoin Unlimited
+## PPA安装Bitcoin Unlimited
 使用`PPA`安装`Bitcoin Unlimited`也是比较简单的，先添加Bitcoin Unlimited的源，然后直接安装即可：
 >sudo add-apt-repository ppa:bitcoin-unlimited/bu-ppa-nightly
 >sudo apt-get update

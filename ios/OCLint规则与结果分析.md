@@ -1,4 +1,4 @@
-#OCLint规则与结果分析`OCLint`是用来做c,c++和Objective-c的静态代码分析工具。在[OCLint安装和使用](https://segmentfault.com/a/1190000005150573)中介绍了`OCLint`的安装和是使用。运行`OCLint`之后，要根据规则读懂结果,分析和修改代码。 有的时候代码出现的一些警告，并不需要立刻修改，但是有一个警告在哪里看着还是挺别扭的，这个时候会就需要了解如何禁止或者忽略一些规则，来消除警告。 ##OCLint规则 最新的OCLint中有67个检查的规则 http://docs.oclint.org/en/stable/rules/index.html， 主要对针对nil值的检查，cocoa的obj检查，类型转换，空值的检查，简洁语法的检查，参数，size和不使用的参数和变量的检查。 主要分为9大类:
+#OCLint规则与结果分析`OCLint`是用来做c,c++和Objective-c的静态代码分析工具。在[OCLint安装和使用](https://segmentfault.com/a/1190000005150573)中介绍了`OCLint`的安装和是使用。运行`OCLint`之后，要根据规则读懂结果,分析和修改代码。 有的时候代码出现的一些警告，并不需要立刻修改，但是有一个警告在哪里看着还是挺别扭的，这个时候会就需要了解如何禁止或者忽略一些规则，来消除警告。 ## OCLint规则 最新的OCLint中有67个检查的规则 http://docs.oclint.org/en/stable/rules/index.html， 主要对针对nil值的检查，cocoa的obj检查，类型转换，空值的检查，简洁语法的检查，参数，size和不使用的参数和变量的检查。 主要分为9大类:
 
 ```
     Basic
@@ -20,7 +20,7 @@
 
 这样就可以禁止`Size`中对`LongLine`的检查。
 
-##OCLint结果分析 OCLint的静态分析结果，警告的级别是从P1,P2,P3依次降低的，可以根据生成的报告找到对应的规则，以及修改建议。 比如下面是一条生成的警告信息:
+## OCLint结果分析 OCLint的静态分析结果，警告的级别是从P1,P2,P3依次降低的，可以根据生成的报告找到对应的规则，以及修改建议。 比如下面是一条生成的警告信息:
 
 ```
 ..../.../SuperLoggerPreviewView.m:165:5:  bitwise operator in conditional [basic|P2]
@@ -34,7 +34,7 @@
 
 ![Rule Index](http://upload-images.jianshu.io/upload_images/22188-d21c3ff8bfec6cd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##禁止OCLint的检查 有的时候在已知的情况下一段代码会产生OCLint的警告，但是因为其他的一些原因，我们又不能修改代码，或者还没有找到更好的修改方式的时候，可以在代码中禁止**OCLint**的检查。
+## 禁止OCLint的检查 有的时候在已知的情况下一段代码会产生OCLint的警告，但是因为其他的一些原因，我们又不能修改代码，或者还没有找到更好的修改方式的时候，可以在代码中禁止**OCLint**的检查。
 
 1.注解
 

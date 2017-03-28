@@ -1,7 +1,7 @@
 在之前的文章[Meteor构建Android应用](http://www.jianshu.com/p/aa5d99401764) 中介绍了如何使用`Meteor`构建Android应用，这篇文章中我们看如何使用`Meteor`构建ios应用。
 关于如何安装`Meteor`可以参考这篇文章[http://www.jianshu.com/p/183185d2b9b1](http://www.jianshu.com/p/183185d2b9b1)。
 
-##安装ios SDK
+## 安装ios SDK
 使用命令直接安装ios的SDK：
 >meteor install-sdk ios
 
@@ -10,7 +10,7 @@
 ✓ Xcode license agreed
 ```
 `Meteor`会检查你的系统中是否安装了`Xcode`,如果没有安装，`Xcode`会引导你安装Xcode。
-##添加对IOS的支持
+## 添加对IOS的支持
 使用命令行直接让你的项目直接ios平台:
 >meteor add-platform ios
 
@@ -19,7 +19,7 @@
 ```
 现在你的项目已经支持ios平台了，可以直接运行了！
 
-##运行
+## 运行
 
 使用命令直接运行ios虚拟机:
 >meteor run ios 

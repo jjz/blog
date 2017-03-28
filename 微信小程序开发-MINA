@@ -18,7 +18,7 @@ MINA框架中有四种类型的文件:
 
 其中`app.js`是程序的入口，`app.json`是项目的配置文件,`app.wxss`是全局配置的样式文件,`logs`和`index`文件夹是是单个页面的文件，`utils`用来存放常用的工具类文件夹。
 
-##app.js
+## app.js
 `app.js`使用`App()`函数注册一个小程序，可以指定小程序的生命周期
 小程序的`App()`生命周期中三个事件可以监听:`onLaunch`，`onShow`，`onHide`。
 * `onLaunch`：小程序加载完成之后调用,全局只触发一次
@@ -44,7 +44,7 @@ onHide: function () {
 ```
 
 其中`app.js`的`globalData`可以设置全局的变量,在一个页面中可以通过`getApp()`函数获取小程序的实例，使用App的`getCurrentPage()`可以获取到当前页面的实例。
-##app.json
+## app.json
  `app.json`是小程序的全局配置包括:页面的路径，窗口表现，设置网络超时,开发模式等...
 
 * 页面配置`pages`:设置页面的路径
@@ -116,7 +116,7 @@ onHide: function () {
 ```
 
 
-##app.wxss
+## app.wxss
 `app.wxss`中定义的的样式为全局样式，作用在每一个页面，在page中定义的`.wxss`文件为局部样式，只作用在局部，局部样式中的定义会覆盖`app.wxss`中定义的样式。
 样式的定义:
 ```
@@ -138,7 +138,7 @@ onHide: function () {
 
 ```
 
-##page
+## page
 使用Page()函数来注册一个页面，为其指定页面的初始数据，生命周期函数，事件处理等。
 
 * `data` 页面的初始数据，可以使用setData更新定义的数据

@@ -3,7 +3,7 @@
 React Native的更新策略是两个星期迭代一个新版本,使用的React Natvie没有多长时间就需要升到最新版本了，这里介绍下如何升级到版本0.25.1以及其以上。
 
 React Native 25，一个显著的变化是*import React*的时候不再从`react-native`中导入，而是从`react`中导入。所以首先需要添加`react`的依赖。
-##使用React
+## 使用React
 首先要添加`React`的依赖，如果把react-natie的版本直接升高到当前版本，比如:`"react-native": "0.31.0"`。
 使用`npm install ` 安装依赖包的时候，会提示错误:
 ```
@@ -29,7 +29,7 @@ npm WARN react-native@0.31.0 requires a peer of react@~15.2.1 but none was insta
 ```
 在运行`npm install`就可以自动下载依赖了。
 
-##import React from 'react'
+## import React from 'react'
 React Native 25之后，除了React不再从`react-native`中引入之外，还包括Component,PropTypes,Children等...
 这里要注意,旧版本的React是从`react-native`中import的。
 如果升级完依赖之后，直接运行项目之后会得到一个报错信息:

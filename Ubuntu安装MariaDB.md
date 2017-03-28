@@ -2,7 +2,7 @@ MariaDB是MySQL的一个分支，主要是用来替换MySQL的，采用GPL授权
 Maria是`Michael Widenius`女儿的名字。
 MariaDB的包并没有在Ubuntu仓库包中，下面对安装MariaDB做个记录，方便下次查看。
 
-##设置仓库
+## 设置仓库
 首先安装`add-apt-repository`的命令，已经安装的可以忽略:
 >sudo apt-get install software-properties-common
 
@@ -15,7 +15,7 @@ MariaDB的包并没有在Ubuntu仓库包中，下面对安装MariaDB做个记录
 更新本地的仓库:
 >sudo apt-get update
 
-##安装MariaDB
+## 安装MariaDB
 >sudo apt-get install mariadb-server
 安装的时候会要求输入**root**密码:
 

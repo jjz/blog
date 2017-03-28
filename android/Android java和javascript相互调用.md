@@ -6,7 +6,7 @@
 
 因为目前4.0系统的手机市场占有量已经很低了，因此我们使用`minSdkVersion`为17，只需要支持4.2版本以上的手机，看下Java和Javascript怎么通信的。
 
-##加载本地html文件
+## 加载本地html文件
 有的时候我们在使用webview开发的时候会使用本地的html文件，在这里为了方便我们把html文件都放在`assets`文件夹中，使用本地加载的方式，不需要server支持。
 先定义一个html文件:
 ```
@@ -25,7 +25,7 @@
     }
 ```
 
-##Javascript调用Java方法
+## Javascript调用Java方法
 以Android的Toast的为例，从Javascript代码中调用系统的Toast。
 我们定义一个AndroidToast的Java类,它有一个show的方法用来显示Toast:
 ```
@@ -58,7 +58,7 @@ function toastClick(){
 ```
 通过window的属性可以找到Java映射的对象AndroidToast,调用它的show方法。
 注意这里传输的数据只能是基本数据类型和string,可以传输string意味着我们可以使用`json`传输结构化数据。
-##Javascript调用Java有返回值
+## Javascript调用Java有返回值
 如果想从Javascript调的方法里面获取到返回值，只需要定义一个带返回值的`@JavascriptInterface`方法:
 ```
 
@@ -80,7 +80,7 @@ function showAlert(){
  }
 ```
 
-##Java调用Javascript方法
+## Java调用Javascript方法
 Java在调用js的时候，使用的是`WebView.loadUrl()`方法，可以直接在HTML页面里面执行JavaScript方法，首先定义一个Javascript方法给Java调用：
 ```
 function callFromJava(str){

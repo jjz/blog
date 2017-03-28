@@ -1,5 +1,5 @@
 # Meteor:jade 
-##jade是什么？
+## jade是什么？
 Jade是一个高性能的模板引擎，语法简洁，它深受Haml影响，它是用JavaScript实现的，并且可以供Node使用。
 Jade[官网][(http://jade-lang.com/)给出的例子:
 ```
@@ -50,7 +50,7 @@ html(lang="en")
   </body>
 </html>
 ```
-##Meteor中使用jade
+## Meteor中使用jade
 在项目目录中直接添加Meteor中对应的包
 >meteor add mquandalle:jade
 

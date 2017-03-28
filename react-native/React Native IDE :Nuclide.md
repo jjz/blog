@@ -3,7 +3,7 @@
 还好有`Nuclide`,Nuclide是Facebook专门为React开发的IDE。Nuclide拥有更好的语法补全，类型检查等,Nulide其实是在Atom的基础上的一系列的插件集，Atom是Github打造的下一代编程开发利器，是一个完全用JavaScript开发的编辑器。
 首先要先安装Atom，下载地址：https://atom.io/
 
-##安装Nuclide
+## 安装Nuclide
 
 通过apm可以安装Atom的插件
 
@@ -19,7 +19,7 @@ Installing nuclide to /Users/***/.atom/packages [BABEL] Note: The code generator
 重新打开Atom，可以看到Nulibe的主界面：
 ![图片描述][1]
 
-##加载React Native 工程
+## 加载React Native 工程
 右上角的菜单里面:
 `Add Porject Folder` 可以加载本地的React Native项目。
 `Add Remote Project Folder`可以加载远程的git的项目。
@@ -30,7 +30,7 @@ Installing nuclide to /Users/***/.atom/packages [BABEL] Note: The code generator
 可以方便的修改JavaScript,Java和Object-c代码，对于这三种代码都有比较友好的代码提示。
 
 
-##React Native服务
+## React Native服务
 使用 `command+shift+p`可以看到命令菜单，这里可以启动React Native的服务。
 启动服务:
 ![图片描述][4]
@@ -38,7 +38,7 @@ Installing nuclide to /Users/***/.atom/packages [BABEL] Note: The code generator
 还可以通过`Nulide React Natvie:Start Debugging`启动debugging:
 ![图片描述][5]
 
-##运行项目
+## 运行项目
 现在我们已经启动了React Native的服务，直接在项目目录下面运行:
 >react-native run-ios
 >react-native run-android

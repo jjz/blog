@@ -39,7 +39,7 @@ defineClass("JPTableViewController", {
 
 `JSPtch`需要一个后台服务用来下发和管理脚本，并需要处理传输安全等`JSPatch`平台提供了对应的服务。
 
-##注册获取AppKey 在`JSPatch`平台上面注册一个账户，新建一个App就可以拿到对应的AppKey。 ##导入SDK到项目中 SDK地址:[http://jspatch.com/Index/sdk](http://jspatch.com/Index/sdk) 当前下载下的SDK版本名称是:`JSPatch 2.framework`,需要去掉中间的空格，不然导入项目的时候会报错。 导入项目的时候要选择`Copy items if needed`。 还需要添加对于的依赖框架`JavaScriptCore.framework`和`libz.tbd`. ##添加JSPatch代码 在`AppDelegate.m`中添加代码:
+## 注册获取AppKey 在`JSPatch`平台上面注册一个账户，新建一个App就可以拿到对应的AppKey。 ## 导入SDK到项目中 SDK地址:[http://jspatch.com/Index/sdk](http://jspatch.com/Index/sdk) 当前下载下的SDK版本名称是:`JSPatch 2.framework`,需要去掉中间的空格，不然导入项目的时候会报错。 导入项目的时候要选择`Copy items if needed`。 还需要添加对于的依赖框架`JavaScriptCore.framework`和`libz.tbd`. ## 添加JSPatch代码 在`AppDelegate.m`中添加代码:
 
 ```
 #import "AppDelegate.h"
@@ -55,7 +55,7 @@ defineClass("JPTableViewController", {
 @end
 ```
 
-##在平台中上传`JavaScript`修复文件 为了简单我们只上传一个简单的`UIAlertView`,弹出一个提示框：
+## 在平台中上传`JavaScript`修复文件 为了简单我们只上传一个简单的`UIAlertView`,弹出一个提示框：
 
 ```
 ar alertView = require('UIAlertView').alloc().init();
@@ -66,7 +66,7 @@ alertView.show();
 
 ```
 
-这段代码用`JavaScript`实例化了`UIAlertView`，文件名需要命名为`main.js`。 ##从服务器下发到客户端 把`main.js`上传到服务器上，下发到版本为1.0的客户端上面。 在请求服务加载脚本的时候出现了一个错误：`The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.` 这个错误出现的原因是ios9引入了新特性`App Transport Security(ATS)`,简单来说就是App内部的请求必须使用`HTTPS协议`。 很明显这里的url并没有使用https，我们可以通过设置先规避掉这个问题:
+这段代码用`JavaScript`实例化了`UIAlertView`，文件名需要命名为`main.js`。 ## 从服务器下发到客户端 把`main.js`上传到服务器上，下发到版本为1.0的客户端上面。 在请求服务加载脚本的时候出现了一个错误：`The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.` 这个错误出现的原因是ios9引入了新特性`App Transport Security(ATS)`,简单来说就是App内部的请求必须使用`HTTPS协议`。 很明显这里的url并没有使用https，我们可以通过设置先规避掉这个问题:
 
 ```
 1. 在info.plist中添加NSAppTransportSecurity类型为Dictionary.

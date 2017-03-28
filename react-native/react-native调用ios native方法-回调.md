@@ -2,7 +2,7 @@
 
 上一篇中介绍了使用[react-native调用ios native方法](http://www.jianshu.com/p/e8d2d8e1e21f),在真实的使用场景中，不仅仅只是调用下Native的方法，还需要对结果进行处理，Native处理完之后返回结果再回调会JavaScript中进行操作和处理。
 这样就需要使用JavaSctipt的回调函数，对结果进行处理。在React Native中Object-c有两种方式的回调:`RCTReponseSenderBlock`和`Promises`。
-##RCTReponseSenderBlock
+## RCTReponseSenderBlock
 在JavaScript和Object-C的参数列表，有一类参数叫做`RCTReponseSenderBlock`对于JavaScript的**Function**，这个就是JavaScript调用Object-C的Callback(回调函数)。
 > * `RCTReponseSenderBlock`是在`RCTBridgeModule.h`定义的block.
 完整的定义:
@@ -64,7 +64,7 @@ RCT_EXPORT_METHOD(showAlertAndCallback:(RCTResponseSenderBlock)callback){
 ```
 每次关闭`UIAlertView`都可以看到JavaScript处理的结果。
 
-##Promises
+## Promises
 `Promises`是`ES6`中的特性，它的目的是统一为JavaScript提供异步编程的接口，避免Callback地狱，解决了Callback的层层嵌套。更加容易的对异步操作进行控制。
 在React Native中对`Promises`有很完善的支持，调用Object-C 的Native方法的时候，也可以Promise的方式让代码执行从Object-C 回到JavaScript中。
 先看Promises的两个状态。

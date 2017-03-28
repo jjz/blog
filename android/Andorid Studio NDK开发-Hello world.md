@@ -6,7 +6,7 @@
 * JNI支持c/c+通过一定的规则直接访问Java中的类，常量，变量等
 
 这里使用的是第一种交互方式，即Java调用c/c++。
-##创建JNI目录
+## 创建JNI目录
 打开`Android Studio`,新建一个项目,右键点击`App`(对应的module)新建一个JNI目录:
 
 ![新建JNI目录](https://user-gold-cdn.xitu.io/2017/3/27/698d64dfd05a5dca448befb73e95ad91) 
@@ -15,7 +15,7 @@
 ![jni目录](https://user-gold-cdn.xitu.io/2017/3/27/07f99e73abf0a7690ed43de7edf5a9ec)
 
 
-##新建Java类
+## 新建Java类
 新建一个HelloJni.java的类,用来和NDK交互:
 
     package com.example.jjz.jni;
@@ -33,7 +33,7 @@ HelloJni中使用关键词`native`定义了一个方法，`native`:一个Natvie 
 
 这是因为并没有实现对应的c/c++的方法，下面就需要使用c/c++使用`sayHello`方法。
 
-##gradle中支持NDK
+## gradle中支持NDK
 
 `Android Studio`从1.3开始就支持了对于NDK的开发，可以在gradle配置NDK的开发选项，首先在`bulid.gradle`中设置ndk的的moduleName:
 
@@ -108,7 +108,7 @@ HelloJni中使用关键词`native`定义了一个方法，`native`:一个Natvie 
     #endif
 
 
-## 实现.h文件
+##  实现.h文件
 `.h`文件只是一个声明文件，还需要实现.h文件中定义的方法
 * 添加.c文件
 新建文件`com_example_jjz_jni_HelloJni.c`用来文件实现`sayHello`方法。
@@ -132,7 +132,7 @@ HelloJni中使用关键词`native`定义了一个方法，`native`:一个Natvie 
         include $(BUILD_SHARED_LIBRARY)
 
 
-##编译调用
+## 编译调用
 文件添加完成之后就可以使用NDK编译了，在../app/src/main/jni目录下，运行命令
 >ndk-build
 

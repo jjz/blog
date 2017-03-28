@@ -2,7 +2,7 @@
 
 采用U盘安装Ubuntu系统是目前比较常见的安装方式之一，在Windows上有制作安装U盘的工具（比如`Universal USB Installer`），那么在`Mac OS`上面如何制作安装U盘呢?
 答案是`命令行`!
-##hdiutil
+## hdiutil
 第一步,需要到[Ubuntu](http://www.ubuntu.com/download)下载需要的Ubuntu的安装文件。
 然后就需要使用第一个命令`hdiutil`。
 `hdituil`:是一个Mac OS上面处理镜像文件的[命令](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/hdiutil.1.html),可以对镜像文件进行`制作，验证和转换`等...
@@ -13,7 +13,7 @@
 `-format`为生成文件的权限,`UDRW `:表示转换成有`read/write`的权限的镜像。
 等待转换完成即可~
 
-##diskutil
+## diskutil
 第二步需要需要对U盘进行操作，而`diskutil`就是用来对Mac OS的磁盘操作的命令。
 `diskutil`:操作本地磁盘，可以对磁盘进行`卸载，挂载`等操作。
 列出当前挂载的磁盘:
@@ -44,7 +44,7 @@ dev/disk0 (internal, physical):
 
 再次使用`diskutil list`命令就不会显示出*disk2*了。
 
-##dd
+## dd
 
 第三步，把安装文件写入U盘，这里需要使用命令`dd`
 `dd`:是`Unix`和`类Unix系统`上的命令，作用就是用指定大小的块拷贝一个文件，并在拷贝的同时进行指定的转换。
@@ -71,7 +71,7 @@ dev/disk0 (internal, physical):
 >sudo eject /dev/rdisk2
 
 可以使用U盘进行Ubuntu的安装了！
-##销毁安装数据
+## 销毁安装数据
 安装完成之后，U盘上面的安装文件还在，这样会影响我们正常使用U盘。可以把U盘格式化一次，清除数据，也可以使用`dd`命令销毁磁盘数据:
 >sudo dd if=/dev/urandom of=/dev/rdisk2
 

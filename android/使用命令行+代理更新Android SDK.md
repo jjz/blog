@@ -1,5 +1,5 @@
 自动化集成是当前的主流趋势，一般配置自动化集成环境都是采用`Server`版本，并没有桌面环境（没有UI），之前写了[CentOS 安装 Jenkins](http://www.jianshu.com/p/8a77010dafc6)，还有[Jenkins持续集成Android项目](https://segmentfault.com/a/1190000004628020),下面就需要在`Server`上安装`Android SDK`了,用来打包Android程序。
-##获取SDK安装包
+## 获取SDK安装包
 获取`android-sdk-linux`的安装包，可以通过下面的命令直接获取。
 >wget http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 
@@ -9,7 +9,7 @@
 
 安装包解压之后，就需要下载`platform`，`platform-tool`以及`Android SDK`了。使用`Android Studio`是可以直接在`SDK Manager`下载的，但是`Server`上没有UI,所以需要使用命令行更新了。
 
-##android 命令
+## android 命令
 到andorid的安装目录里的`tools`目录下，运行命令:
 >android -h
 
@@ -43,7 +43,7 @@
 
 列出所有的SDK,在选择更新sdk的时候使用`--filter`选择的时候也必须加上`--all`参数。
 使用命令行更新比较麻烦的是遇到了个问题： 一般更新Andorid SDK都是使用`SDK Manager`直接更新,而因为墙的问题`dl-ssl.google.com/android`无法使用。
-##使用代理更新SDK
+## 使用代理更新SDK
 真实情况是运行命令`android list sdk `的时候，都会卡在:
 
     Fetching https://dl.google.com/android/repository/addons_list-2.xml
@@ -80,7 +80,7 @@
 使用国内的镜像服务器安装，服务稳定，下载速度快，不需要翻墙。
 * 注：其中extra-android-m2repository，就是android的`Support Libraries`。
 
-##可能会出现的错误
+## 可能会出现的错误
 * 第一个可能会出现的错误
 ```
  Cannot run program "/var/lib/jenkins/tools/android-sdk/build-tools/23.0.1/aapt": error=2, No such file or directory

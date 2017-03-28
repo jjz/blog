@@ -9,7 +9,7 @@ react-native:调用Native方法（Android）
 
 在android的项目目录下面新建一个类*RNToastModule*,此类需要继承`ReactContextBaseJavaModule`。
 
-##ReactContextBaseJavaModule`ReactContextBaseJavaModule`是一个抽象类，是用来被JavaScript调用对象的父类，我们需要Override一些`ReactContextBaseJavaModule`的方法。
+## ReactContextBaseJavaModule`ReactContextBaseJavaModule`是一个抽象类，是用来被JavaScript调用对象的父类，我们需要Override一些`ReactContextBaseJavaModule`的方法。
 
 首先要Override `getName()`方法：
 
@@ -65,7 +65,7 @@ rnToastAndroid.show('Hello Toast of native', rnToastAndroid.SHORT);
 
 这个使用了`annotation`定义的方式必须加上`@ReactMethod`。 这里的参数只能React Navive定义的参数。
 
-##ReactMethod的对应参数`@ReactMethod`中传的参数必须是JavaScript和Java对应的。
+## ReactMethod的对应参数`@ReactMethod`中传的参数必须是JavaScript和Java对应的。
 
 ```
 Boolean -> Bool
@@ -78,7 +78,7 @@ ReadableMap -> Object
 ReadableArray -> Array
 ```
 
-##注册ReactPackage 新建一个*RNJavaReactPackage*类，继承ReactPackage。
+## 注册ReactPackage 新建一个*RNJavaReactPackage*类，继承ReactPackage。
 
 ```
     @Override
@@ -101,7 +101,7 @@ ReadableArray -> Array
 
 *RNJavaReactPackage*创建了一个NativeModule的List。把*RNToastModule*的实例都添加进去提供给JavaScript层调用。
 
-##添加ReactPackage~~在`android/app/src/main/java/com/your-app-name/`中有个*MainActivity.java*其中的`getPackages()`方法用来返回用来的ReactPackage包,添加定义好的*RNJavaReactPackage*的实例~~ 以上内容已经在`0.31.0`中更新。 新版本使用`ReactNativeHost`替换`ReactInstanceManager`,ReactNativeHost是设置Android相关配置的类。 需要在`Application`中实例化。 首先实现新建一个`ReactNativeHost`的实例并添加*RNJavaReactPackage*的实例:
+## 添加ReactPackage~~在`android/app/src/main/java/com/your-app-name/`中有个*MainActivity.java*其中的`getPackages()`方法用来返回用来的ReactPackage包,添加定义好的*RNJavaReactPackage*的实例~~ 以上内容已经在`0.31.0`中更新。 新版本使用`ReactNativeHost`替换`ReactInstanceManager`,ReactNativeHost是设置Android相关配置的类。 需要在`Application`中实例化。 首先实现新建一个`ReactNativeHost`的实例并添加*RNJavaReactPackage*的实例:
 
 ```
 private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -130,7 +130,7 @@ public class MainApplication extends Application implements ReactApplication {
 }
 ```
 
-##JavaScript中调用 在JavaScript显示Toast:
+## JavaScript中调用 在JavaScript显示Toast:
 
 ```
 'use strict';

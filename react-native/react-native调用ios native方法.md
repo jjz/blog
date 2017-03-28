@@ -3,7 +3,7 @@ React Native在设计之初，就考虑到了React Native提供的API,不能够�
 有的时候在处理数据库，多线程上面，使用Native加的方便。
 下面就以调用IOS系统的`Alert`为例，看下怎么使用JavaScript代码调用Object-C的Native方法的。
 
-##RCTBridgeModule
+## RCTBridgeModule
 `RCT`是ReaCT的缩写，React Native中Object-C相关的命名均以RCT开头。
 `RCTBridgeModule`是定义好的`protocol`，实现该协议的类，会自动注册到Object-C对应的Bridge中。
 Object-C Bridge上层负责与Object-C通信，下层负责和JavaScript Bridge通信，而JavaScript Bridge负责和JavaScript通信.
@@ -19,7 +19,7 @@ Object-C Bridge上层负责与Object-C通信，下层负责和JavaScript Bridge�
 @end
 
 ```
-##RCT_EXPORT_MODULE
+## RCT_EXPORT_MODULE
 所有实现`RCTBridgeModule`的类都必须显示的`include`宏命令:`RCT_EXPORT_MODULE()`。
 `RCT_EXPORT_MODULE`的作用是:自动注册一个Module,当Object-c Bridge加载的时候。这个Module可以在JavaScript Bridge中调用。
 `RCT_EXPORT_MODULE`宏命令的定义:
@@ -43,7 +43,7 @@ RCT_EXPORT_MODULE();
 @end
 
 ```
-##RCT_EXPORT_METHOD
+## RCT_EXPORT_METHOD
 `RCT_EXPORT_METHOD`是用来定义被JavaScript调用的方法的宏。`RCT_EXTERN_METHOD`调用了宏`RCT_EXTERN_REMAP_METHOD`,最终调用宏`RCT_EXTERN_REMAP_METHOD`。
 `RCT_EXTERN_REMAP_METHOD`的代码实现：
 ```
@@ -71,7 +71,7 @@ RCT_EXPORT_METHOD(show:(NSString *)msg){
 @end
 
 ```
-##JavaScript调用
+## JavaScript调用
 在JavaScript中调用Object-C定义的方法，需要先导入`NativeModules`,再使用`RNIOSAlert`：
 完整代码如下:
 ```
@@ -103,7 +103,7 @@ class RNIos extends Component {
 ![Alert](http://upload-images.jianshu.io/upload_images/22188-fadee3e454593b89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-##参数
+## 参数
 `RCT_EXPORT_METHOD`支持需要JSON所支持的数据类型，JavaScript中的参数与Object-C的参数的对应关系。
 
 * string -> NSString

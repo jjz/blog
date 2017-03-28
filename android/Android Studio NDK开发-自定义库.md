@@ -3,7 +3,7 @@
 在Android Studio使用`Modules`的方式让一个库的源代码在多个项目中使用，这是gradle在管理Android项目中常用的方式之一，那NDK的library库又是如何管理的呢?
 `gradle-experimental`既然是gradle的扩展插件，必然有很多的地方和gradle类似，管理类库也是采用类似的方式。
 
-##新建JNI类库
+## 新建JNI类库
 当前的`gradle-experimental`还不支持直接新建jni module，因此需要需要手动的去新建JNI类库。
 首先把项目从`Android`切换到`Project`：
 
@@ -19,7 +19,7 @@
 >include `:jni-lib`
 
 接下来就需要构建一个基于`gradle-experimental`的NDK的 module了。
-##com.android.model.native
+## com.android.model.native
 插件`com.android.model.native`类似与`com.android.library`，是用来构建一个NDK类库的DSL。
 在`./jni-lib/build.gradle`中添加代码:
 
@@ -60,7 +60,7 @@ model {
 ```
 这里定义了类库的名字为:jni-lib,支持的平台`armeabi`和`armeabi-v7a`，调用系统的log库。
 
-##JNI代码
+## JNI代码
 JNI代码默认放在**module**的主目录下的`./src/main/jni`中，按照这个结构新建JNI代码目录。
 JNI的库中需要定义.h文件，方便其他module直接引用，在`./src/main/jni`中新建llib.h文件
 ```
@@ -81,7 +81,7 @@ extern void callMethodFromJniLib() {
 }
 ```
 
-##引入**jni-lib**
+## 引入**jni-lib**
 调用jni-lib类库的时候，首先需要把`header`文件都给暴露出来，这样可以在其他的module中直接引用，`modle.android.sources`中指定需要暴露的文件:
 ```
 

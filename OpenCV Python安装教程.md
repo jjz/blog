@@ -1,12 +1,12 @@
 [OpenCV](http://opencv.org/)全称:Open Source Computer Vision Library，是一个开源的跨平台计算机视觉库，github地址：[https://github.com/opencv/opencv](https://github.com/opencv/opencv)。OpecCV主要用c++语言编写，也提供了python等其他语言的，下面介绍下如何在MacOS和Ubuntu上如何安装OpenCV以及OpenCV的Python调用库。
-##MacOS上面安装
-####安装OpenCV
+## MacOS上面安装
+## ## 安装OpenCV
 使用Homebrew安装直接安装OpenCV:
 >brew install opencv
 
 OpenCV的安装目录为：`/usr/local/Cellar/opencv/`。
 也可以从[官网](http://opencv.org/)下载安装包直接安装。比较复杂的是下载源代码使用`cmake`安装。
-###cv2
+## #cv2
 
 OpenCV在Python中调用的时候使用的库是`cv2`。在python中可以直接使用`cv2`:
 >import cv2
@@ -25,7 +25,7 @@ cv2.so
 ```
 可以把这两个文件复制Python库目录`/usr/local/lib/python2.7/site-packages`下面，这样在调用的时候Python就可以找到`cv2`的库。
 
-##Ubuntu上安装OpenCV的方法
+## Ubuntu上安装OpenCV的方法
 先Ubuntu上可以直接编译OpenCV安装,首先要安装编译需要的依赖包：
 >sudo apt-get install cmake  build-essential  libgtk2.0-dev libjpeg8-dev  libjpeg-dev  libavcodec-dev libavformat-dev  libtiff5-dev cmake libswscale-dev 
 
@@ -45,7 +45,7 @@ sudo make install
 >sudo apt-get install python-opencv
 
 完整脚本地址：[https://github.com/jjz/script/blob/master/opencv-python.sh](https://github.com/jjz/script/blob/master/opencv-python.sh)
-###使用OpenCV
+## #使用OpenCV
 一个简单用来验证Python是否能够调用OpenCV的方法:
 >import cv2
 >cv2.__version__
