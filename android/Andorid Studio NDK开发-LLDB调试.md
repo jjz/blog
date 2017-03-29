@@ -31,19 +31,23 @@
 
 * print (p)打印命令，打印变量以及其值:
 > p chars
-   (char [10]) $0 = "i am test"
+
+    (char [10]) $0 = "i am test"
 
 * po 仅打印变量的值:
 >po chars
-   "i am test"
+
+    "i am test"
 
 * call 就是调用的意思，上述po和p也有调用的功能。一般只在不需要显示输出，或是方法无返回值时使用。例如定义一个变量int p=0,使用`call`命令:
 >call p++
-  (int) $0 = 1
+
+    (int) $0 = 1
 
 * expr 可以在调试时动态执行指定表达式，并打印结果，用于在调试过程中修改变量的值
 比如我们在程序里面定义int b=1;可以在断点的时候使用`expr`更改其值。
 >expr b=10
+
     (int) $0 = 10 
 
  
