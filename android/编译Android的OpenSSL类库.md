@@ -3,35 +3,36 @@
 `OpenSSL`是一个强大的开源安全套接字层密码库，它包含了主要的密码学算法，常用的密钥和证书封装管理以及SSL协议,并提供丰富的应用程序供测试或其他目的使用。
 在`Android`上开发对于安全的需求越来越高，虽然`OpenSSL`出现过几次漏洞，但它仍然是在安全方面的使用最多的加密库之一。
 `OpenSSL`是一个基于c语言开发的，古老的，开源的加密库，想要在`Android`上使用`OpenSSL`必须要借助`NDK`,先使用NDK编译成Android上面的动态连接库(或者静态链接库)，再借助JNI层的封装，提供给Java层调用。
-这篇文章主要写的是如何编译`Android`的`OpenSSL`类库。参考OpenSSL的官方文档：https://wiki.openssl.org/index.php/Android
+这篇文章主要写的是如何编译`Android`的`OpenSSL`类库。参考OpenSSL的官方文档：[https://wiki.openssl.org/index.php/Android](https://wiki.openssl.org/index.php/Android)
 
 ## 前期准备
 
 环境准备:
+* 编译环境为MacOS
 * OpenSSL的源代码
-* setenv-adnroid.sh 构建脚本
+* Setenv-android.sh 构建脚本
 * 安装Make
 * 安装makedepend
-安装环境是MacOS。
 
-`OpenSSL`可以在github上找到源代码,源代码地址：https://github.com/openssl/openssl
+
+`OpenSSL`可以在github上找到源代码,源代码地址：[https://github.com/openssl/openssl](https://github.com/openssl/openssl)
 >git clone git@github.com:openssl/openssl.git
 
 也可以在官网上下载最新的release版本：https://www.openssl.org/source/
 由于`OpenSSL`项目的主干(master)上提交的是开发分支，最好把`OpenSSL`切换到最新的release版本上面
 >git checkout OpenSSL_1_1_0e
 
-`setenv-android.sh`是用来编译Android上的OpenSSL的脚本，下载地址：https://wiki.openssl.org/images/7/70/Setenv-android.sh
+`Setenv-android.sh`是用来编译Android上的OpenSSL的脚本，下载地址：[https://wiki.openssl.org/images/7/70/Setenv-android.sh](https://wiki.openssl.org/images/7/70/Setenv-android.sh)
 >wget https://wiki.openssl.org/images/7/70/Setenv-android.sh
 
-给`setenv-android.sh`脚本可以运行的权限
+给`Setenv-android.sh`脚本可以运行的权限
 >chmod a+x Setenv-android.sh
 
 安装`makedepend`
 >brew install makedepend
 
 ## 运行脚本
-`setenv-android.sh`脚本的作用是用来给编译OpenSSL配置Android编译的环境变量的。脚本下载完成之后是不能直接运行，原因在于脚本里面的变量并没有配置，需要配置变量:
+`Setenv-android.sh`脚本的作用是用来给编译OpenSSL配置Android编译的环境变量的。脚本下载完成之后是不能直接运行，原因在于脚本里面的变量并没有配置，需要配置变量:
 ```
 ANDROID_NDK_ROOT:
 ANDROID_ARCH: arch-arm
@@ -84,7 +85,7 @@ WARNING! If you wish to build 64-bit library, then you have to
 编译的`OpenSSL`使用的是本地的`darwin64-x86_64-cc`,并不是想要的`arm-linux-androideabi-gcc`编译的，编译的这个类库是不能在Android上面使用的。原因是什么呢？查看了下环境变量:
 >echo $ANDROID_API
 
-发现这个变量没有配置，上面的环境变量的配置`setenv-android.sh`在设置的环境变量并没有起作用。
+发现这个变量没有配置，上面的环境变量的配置`Setenv-android.sh`在设置的环境变量并没有起作用。
 
 ## 优化编译脚本
 在`Setenv-android.sh`中，尝试下打印`$ANROID_API`的值，打印`$ANDROID_API`的内容：
@@ -113,5 +114,5 @@ sudo -E make install CC=$ANDROID_TOOLCHAIN/arm-linux-androideabi-gcc RANLIB=$AND
 完成编译之后可以看到`/usr/local/ssl/android-23`有生成了对应的库和文件,OpenSSL源代码目录下生成了：`libcrypto.so`和`libcrypto.a`
 这样就完成了Android的`OpenSSL`库编译完成，下一步就可以尝试在NDK中引用OpenSSL了。
 
-优化后的脚本地址：https://github.com/jjz/script/blob/master/build_android_openssl.sh
+优化后的脚本地址：[https://github.com/jjz/script/blob/master/build_android_openssl.sh](https://github.com/jjz/script/blob/master/build_android_openssl.sh)
 
