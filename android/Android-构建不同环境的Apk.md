@@ -102,7 +102,7 @@ buildTypes {
 
 * assembleDebug
 * assembleRelease
-* assembleTeleaseTest
+* assembleReleaseTest
 
 这样就可以根据需要构建不同的Apk,不需要更改代码就可以构建不同环境的Apk,而且生成的Apk的名字也能区分出不同的环境，通过上面的配置可以构建出三种Apk：
 
