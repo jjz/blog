@@ -1,10 +1,11 @@
 # Android-构建不同环境的Apk
 
-在开发`Android`过程中，常常需要构建不同环境的APK，比如我们有可能会需要有三个环境
+在开发`Android`过程中，常常需要构建不同环境的Apk，比如我们有可能会需要有三个环境
 
 * 开发环境
 * 测试环境
 * 线上环境
+
 三种环境对应不同的服务器地址:
 ```
    public static final String DEV_URL = "http://dev.domain.com/";
@@ -32,13 +33,14 @@
     }
 ```
 
-这样可以通过设置**ENV_SETTING**构建不同的APK:
+这样可以通过设置**ENV_SETTING**构建不同的Apk:
 * 开发的时候使用默认dev环境
 * 测试的时候给test环境
 * 发布的时候使用release环境
-但是这样做却有一些问题，就是每次必须修改**ENV_SETTING**的值，每次更改都会导致版本库变动，产生新的提交，如果提交之后的话，其他的开发者不一定会知道版本库的变动，导致环境不同产生错误，还有可能环境不对，生产出了错误环境的APK. 有没有办法解决以下问题呢？
 
-1. 可以构建不同环境的APK 
+但是这样做却有一些问题，就是每次必须修改**ENV_SETTING**的值，每次更改都会导致版本库变动，产生新的提交，如果提交之后的话，其他的开发者不一定会知道版本库的变动，导致环境不同产生错误，还有可能环境不对，生产出了错误环境的Apk. 有没有办法解决以下问题呢？
+
+1. 可以构建不同环境的Apk 
 2. 不需要修改代码 
 3. 可以使用不同的签名
 利用`gradle`可以解决上面的三个问题，下面就看下如何使用`gradle`解决上面的问题吧！
@@ -77,7 +79,7 @@ buildTypes {
 
     }
 ```
-`buildTypes`中只有两种配置，在build的时候只能生产出两个APK:*debug*和*release*，需要第三种环境的APK,就需要定义一种新的`buildTypes`，用来构建测试环境的APK. 新增加一种`buildTypes`：
+`buildTypes`中只有两种配置，在build的时候只能生产出两个Apk:*debug*和*release*，需要第三种环境的Apk,就需要定义一种新的`buildTypes`，用来构建测试环境的Apk. 新增加一种`buildTypes`：
 ```
  buildTypes {
         release {
@@ -96,18 +98,18 @@ buildTypes {
 ```
 新增加`buildTypes`叫做`releaseTest`(注意不能使用test开头)。 它继承了`buildTypes.release`的配置，可以通过`buildConfigField`给`ENV_SETTING`重新赋值，它会覆盖`buildTypes.release`的配置。 这样就有了三种不同的build配置。 
 ## assmble* 
-`gradle`通过`assmble*`命令可以打包不同`buildTypes`的APK，在右侧的gradle工具栏里面的build菜单栏里面可以看到三种不同的`assemble`:
+`gradle`通过`assmble*`命令可以打包不同`buildTypes`的Apk，在右侧的gradle工具栏里面的build菜单栏里面可以看到三种不同的`assemble`:
 
 * assembleDebug
 * assembleRelease
 * assembleTeleaseTest
 
-这样就可以根据需要构建不同的APK,不需要更改代码就可以构建不同环境的APK,而且生成的APK的名字也能区分出不同的环境，通过上面的配置可以构建出三种APK：
+这样就可以根据需要构建不同的Apk,不需要更改代码就可以构建不同环境的Apk,而且生成的Apk的名字也能区分出不同的环境，通过上面的配置可以构建出三种Apk：
 
 * app-debug.apk
 * app-release.apk
 * app-releaseTest.apk
 
-还可以根据上面的配置需要设置不同的APK签名，通过`signingConfig`进行设置。
+还可以根据上面的配置需要设置不同的Apk签名，通过`signingConfig`进行设置。
 
 
