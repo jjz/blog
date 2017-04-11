@@ -1,21 +1,22 @@
-最近有一款应用很火，叫做:Housparty,Housparty是一款视频群聊应用，最近它在App Store上的下载排名已经超过了Facebook。同时，有媒体称Houseparty已经完成了最新一轮的投资。自己就想模仿一个玩玩，研究了下，发现有个叫`Agora`的可以实现部分的功能。
+#Agora iOS SDK-快速入门
+最近有一款应用很火，叫`Housparty`，Housparty是一款视频群聊应用，最近它在App Store上的下载排名已经超过了Facebook。同时，有媒体称Houseparty已经完成了最新一轮的投资。自己就想着模仿一个玩玩，研究了下，发现有个叫`Agora`的可以实现部分的功能，就想试用下。
 `声网Agora.io`是一家提供稳定，高可用，有质量保障的实时`视频通话`和实时`全互动直播技术`服务的平台，支持全平台，只需要简单集成SKD，即可让应用实现高清视频通话，和多主播实时全互动直播。
-既然已经有了SDK，就不需要自己写视频以及通信部分的代码了，这样模仿`Housparty`就更加的简单了，下面以iOS平台为例，看下如何集成`Agora SDK`。
+既然已经有了SDK，就不需要自己写视频以及通信部分的代码了，这样写一个`Housparty`的demo就更简单了，下面以iOS平台为例，看下如何集成`Agora SDK`。
 ## 环境准备
 本文使用的环境如下:
 * XCode 8.3.1
-* iOS 9.3
+* 最小SDK iOS 9.3
 * 真机
 * Swift语言
 * [最新Agora SDK ](http://www.agora.io/cn/news/download/)
 * [申请AppID](https://dashboard.agora.io/signin)
 
-先要注册`agora.io`之后再新建一个项目，需要拿到对应的`App ID`。后面的实例代码中需要使用该`App ID`。
-最新的`Agora SDK`其中有两个文件夹：
+先要注册`agora.io`，注册完成之后再新建一个项目，需要拿到对应的`App ID`。后面的示例代码需要使用该`App ID`。
+最新的`Agora SDK`中有两个文件夹：
 * ./libs 中含有的是所需的库（集成到App需要的）
 * ./samples 包含Open Video Call 和 Open Live的代码示例
 
-需要的环境准备好之后，新建一个`agora`项目，开始配置和集成`Agora SDK`。
+需要的环境准备好之后，新建一个`agora`项目，就可以开始配置和集成`Agora SDK`。
 ## 添加SDK
 先把Agora SDK中`./libs`复制到agora项目中的agora目录下。再把Agora SDK添加到项目的`Libraries`中。
 添加`Libraries`的方法：
@@ -26,7 +27,7 @@
 4. 点击+
 
 ![Link Binary](http://upload-images.jianshu.io/upload_images/22188-ee97d1026cc20fd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-出现的界面是添加系统类库，选择`Add Other ...`从项目目录中选中`./libs`添加里面的内容到`Libraries`中。这样就添加了`Agora SDK`。
+这个时候出现的界面是添加系统类库的，选择`Add Other ...`从项目目录中选中`./libs`添加里面的内容到`Libraries`中。这样就添加了`Agora SDK`。
 在添加`Agora SDK`之后，还需要添加`Agora SDK`所依赖的库，参考官网上面demo使用的`libraries`，添加以下类库:
 * CoreTelephony.framework
 * CoreMedia.framework
@@ -48,13 +49,13 @@ ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 ```
-重新运行官网的demo也出现了同样的错误，说明类库没有导入完整，还需要导入类库`libresolv.9.tbd`。
+运行官网的demo也出现了同样的错误，说明类库没有导入完整，还需要导入类库是`libresolv.9.tbd`。
 类库依赖问题比较容易出现，另一方面也说明没有支持`Pod`的麻烦，建议`Agora`能尽快支持`CocoaPods`。
 再次`build`又出现了个问题:
 ```
 ld: library not found for -lcrypto
 ```
-编译时找不到需要的链接库导致的原因，解决方法:
+问题的原因是：编译时找不到需要的链接库导致的，解决方法:
 1. 选中当前Target(agora)
 2. Build Settings 
 3. Search Paths 
@@ -72,7 +73,7 @@ ld: library not found for -lcrypto
 
 这样就配置完成了`Agora SDK`的支持，下面就可以开始使用`Agora SDK`了。
 ## 访问OC类库
-`Agora SDK`使用的是`Object-c`开发的，而我们的项目使用的是`Swift`开发的，因此就需要在`Swift`中访问`OC`，首先新建一个文件命名为`agora-Bridging-Header.h`,在该文件中引入`Agora SDK`:
+`Agora SDK`使用的是`Object-c`开发的，而我们的项目使用的是`Swift`开发的，因此就需要在`Swift`中访问`OC的类库`，新建一个文件命名为`agora-Bridging-Header.h`,在该文件中引入`Agora SDK`:
 ```
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 #import <AgoraRtcCryptoLoader/AgoraRtcCryptoLoader.h>
@@ -85,7 +86,8 @@ ld: library not found for -lcrypto
 5. agora/agora-Bridging-Header.h
 
 ![oc bridging](http://upload-images.jianshu.io/upload_images/22188-d25db5ad9d6394be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-这样能在`Swift`中使用`Agora SDK`了。开始调用`Agora SDK`之前还要知道，`Agora SDK`实现的是一套高清视频通话或直播系统，除了完成集成`Agora SDK`的工作之外，还需要给项目对应的访问权限。
+这样能在`Swift`中使用`Agora SDK`了。
+在开始调用`Agora SDK`之前还要知道，`Agora SDK`实现的是一套高清视频通话或直播系统，除了完成集成`Agora SDK`的工作之外，还需要给项目对应的访问权限。
 ## 权限
 需要给项目两个权限才能使用`Agora SDK`，这两个权限是:
 * 相机
@@ -105,4 +107,3 @@ ld: library not found for -lcrypto
 4. 前后摄像头切换
 
 项目地址:[https://github.com/jjz/agora-swift](https://github.com/jjz/agora-swift)
-
