@@ -7,7 +7,7 @@ Agora封装了视频聊天的大多数常用功能，直接调用Agora API即可
 var agoraKit : AgoraRtcEngineKit!
 ```
 初始化该变量需要实现委托:`AgoraRtcEngineDelegate`,它是AgoraRtcEngineKit的回调，在出现错误、离开频道....等情况出现的时候可以在该回调中得到通知。
-它的其中一个方法`- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed;`的意思是在其他用户准备好视频通信的情况下会触发该方法，这个时候就可以配置该用户的显示界面了，`AgoraRtcEngineDelegate`实现：
+它的其中一个方法`- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size:(CGSize)size elapsed:(NSInteger)elapsed;`的意思是在第一个用户准备好视频通信的情况下会触发该方法，这个时候就可以配置该用户的显示界面了，`AgoraRtcEngineDelegate`实现：
 ```
 extension ChatViewController:AgoraRtcEngineDelegate{
     func rtcEngine(_ engine: AgoraRtcEngineKit!, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
