@@ -1,5 +1,8 @@
 原文地址：[https://chrispacia.wordpress.com/2017/09/01/the-bitcoin-cash-roadmap/](https://chrispacia.wordpress.com/2017/09/01/the-bitcoin-cash-roadmap/)
 *注：作者是openbazaar的开发者，开发了Bitcoin Cash Wallet，这里描述的路线图是作者从邮件组和Slack中总结的，并不是官方给出的路线图*
+
+![bitcoin cash](http://upload-images.jianshu.io/upload_images/22188-e4e524b31e8b41d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 比特币现金从*Bitcoin Core*中分裂出来已经一个月了，按照任何合理的标准来看，比特币现金都应该被定义为是成功的。在刚分裂的时候比特币现金存在着巨大的不确定性。
 有人会支持新的分叉吗？
 有交易所交易吗？
